@@ -1,26 +1,36 @@
-package org.example;
+package imdh.tfm.proceduralwallpapers;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Constants;
-import java.awt.Color;
+import android.graphics.Paint;
 
-public class LinesWallpaper extends GenericWallpaper{
+public class LinesWallpaper extends GenericWallpaper {
 
-  private Color backgroundColor;
-  private Color linesColor;
-  private int lineThickness;
+    private OneColor backgroundColor;
+    private int lineThickness;
 
-  public LinesWallpaper(){
-    super();
+    UtilsWallpaper utilsWallpaper;
 
-    //Variables initialization
-    lineThickness = Constants.DEFAULT_LINE_THICKNESS;
-    backgroundColor = Color.WHITE;
-    linesColor = Color.BLACK;
+    public LinesWallpaper() {
+        super();
 
-    
+        //Variables initialization
+        lineThickness = Constants.DEFAULT_LINE_THICKNESS;
+        backgroundColor = new OneColor(0xFFFFFFFF);
+        utilsWallpaper = utilsWallpaper.getInstance();
 
-  }
+        fillWithColor(backgroundColor.getColor());
+        Paint mPaint = new Paint();
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(lineThickness);
+        mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
+        Palette examplePalette = utilsWallpaper.getExamplePalette();
 
-  public LinesWallpaper(){}
+        int deviation = canvas.getWidth();
+        for (int i = -deviation; i < deviation; i = i + 1) {
+            mPaint.setColor(examplePalette.getColorsList().get(utilsWallpaper.randomBetween(0,5)).getColor());
+            canvas.drawLine(i, 0, i+deviation, canvas.getHeight(), mPaint);
+        }
+
+
+    }
 
 }

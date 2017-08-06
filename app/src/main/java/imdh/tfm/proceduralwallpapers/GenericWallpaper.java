@@ -7,28 +7,38 @@ import android.graphics.Paint;
 
 public class GenericWallpaper {
 
-  private Canvas canvas;
+    protected Canvas canvas;
+    private Bitmap bitmap;
 
-  public GenericWallpaper() {
-    canvas = new Canvas(Bitmap.createBitmap(Constants.DEFAULT_WIDTH, Constants.DEFAULT_HEIGHT, Bitmap.Config.ARGB_8888));
-  }
+    public GenericWallpaper() {
+        bitmap = Bitmap.createBitmap(Constants.DEFAULT_WIDTH, Constants.DEFAULT_HEIGHT, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap);
+    }
 
-  public GenericWallpaper(int width, int height) {
-    canvas = new Canvas(Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888));
-  }
+    public GenericWallpaper(int width, int height) {
+        bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        canvas = new Canvas(bitmap);
+    }
 
-  public Canvas getCanvas() {
-    return canvas;
-  }
+    public void fillWithColor(int color) {
+        Paint mPaint = new Paint();
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(color);
+        canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), mPaint);
+    }
 
-  public void setCanvas(Canvas canvas) {
-    this.canvas = canvas;
-  }
+    public Canvas getCanvas() {
+        return canvas;
+    }
+    public void setCanvas(Canvas canvas) {
+        this.canvas = canvas;
+    }
 
-  public void fillWithColor(int color) {
-    Paint mPaint = new Paint();
-      mPaint.setStyle(Paint.Style.FILL);
-      mPaint.setColor(color);
-      canvas.drawRect(0,0,canvas.getWidth(), canvas.getHeight(), mPaint);
-  }
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 }
