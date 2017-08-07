@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProceduralWallpapers</string>
+    <string name="storage_permission_explanation">Es necesario conceder el permiso de almacenamiento para poder guardar la imagen en el teléfono</string>
+    <string name="storage_permission_title">Permiso de almacenamiento</string>
 </resources>

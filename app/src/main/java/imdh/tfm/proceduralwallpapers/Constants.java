@@ -7,5 +7,6 @@ public class Constants {
 
     public static final int DEFAULT_LINE_THICKNESS = 4;
 
+    public static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
 }
