@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                    LocalStorage localStorage = new LocalStorage();
-                    localStorage.saveBitmap(genericWallpaper.getBitmap());
+                    new BitmapStorageExport(genericWallpaper.getBitmap()).execute();
                 }
             }
         });

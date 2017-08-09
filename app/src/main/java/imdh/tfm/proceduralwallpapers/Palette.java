@@ -14,6 +14,15 @@ public class Palette {
         colorsList = new ArrayList<OneColor>(5);
     }
 
+    public Palette(int c0, int c1, int c2, int c3, int c4){
+        colorsList = new ArrayList<OneColor>(5);
+        addColor(c0);
+        addColor(c1);
+        addColor(c2);
+        addColor(c3);
+        addColor(c4);
+    }
+
     public void addColor(int color){
         colorsList.add(new OneColor(color));
     }
