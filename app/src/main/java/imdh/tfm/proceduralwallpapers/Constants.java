@@ -9,4 +9,9 @@ public class Constants {
 
     public static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
+    public static final int PALETTES_SAMPLE_100 = R.raw.cien;
+    public static final int PALETTES_SAMPLE_200 = R.raw.doscientas;
+    public static final int PALETTES_SAMPLE_500 = R.raw.quinientas;
+    public static final int PALETTES_SAMPLE_1000 = R.raw.mil;
+
 }

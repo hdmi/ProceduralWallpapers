@@ -26,7 +26,7 @@ public class LinesWallpaper extends GenericWallpaper {
 
         int deviation = canvas.getWidth();
         for (int i = -deviation; i < deviation; i = i + 1) {
-            mPaint.setColor(examplePalette.getColorsList().get(utilsWallpaper.randomBetween(0,5)).getColor());
+            mPaint.setColor(examplePalette.randomColor());
             canvas.drawLine(i, 0, i+deviation, canvas.getHeight(), mPaint);
         }
 

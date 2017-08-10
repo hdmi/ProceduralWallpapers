@@ -2,6 +2,7 @@ package imdh.tfm.proceduralwallpapers;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -34,6 +35,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 wallpaper.setImageBitmap(drawLineWallapaper());
             }
+        });
+
+        Button btnOpenPalettesActivity = (Button) findViewById(R.id.buttonOpenPalettesActivity);
+        btnOpenPalettesActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PalettesDisplayActivity.class);
+                startActivity(intent);
+            }
+
         });
 
         wallpaper.setOnClickListener(new View.OnClickListener() {
@@ -108,4 +119,6 @@ public class MainActivity extends AppCompatActivity {
         int result = this.checkCallingOrSelfPermission(permission);
         return result == PackageManager.PERMISSION_GRANTED;
     }
+
+
 }

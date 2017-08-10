@@ -40,7 +40,6 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
     public void onBindViewHolder(PalettesAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
         Palette palette = mPalettesList.get(position);
-        List<OneColor> colorsList = palette.getColorsList();
 
         // Set item views based on your views and data model
         ImageView imageView0 = viewHolder.imageView0;
@@ -49,11 +48,12 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
         ImageView imageView3 = viewHolder.imageView3;
         ImageView imageView4 = viewHolder.imageView4;
 
-        imageView0.setBackgroundColor(colorsList.get(0).getColor());
-        imageView1.setBackgroundColor(colorsList.get(1).getColor());
-        imageView2.setBackgroundColor(colorsList.get(2).getColor());
-        imageView3.setBackgroundColor(colorsList.get(3).getColor());
-        imageView4.setBackgroundColor(colorsList.get(4).getColor());
+        imageView0.setBackgroundColor(palette.getC0());
+        imageView1.setBackgroundColor(palette.getC1());
+        imageView2.setBackgroundColor(palette.getC2());
+        imageView3.setBackgroundColor(palette.getC3());
+        imageView4.setBackgroundColor(palette.getC4());
+
     }
 
     @Override

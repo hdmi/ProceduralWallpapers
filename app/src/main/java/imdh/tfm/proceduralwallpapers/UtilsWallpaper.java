@@ -27,12 +27,7 @@ public class UtilsWallpaper {
     }
 
     private void initExamplePalettes() {
-        examplePalette = new Palette();
-        examplePalette.addColor(0xFFE63946);
-        examplePalette.addColor(0xFFF1FAEE);
-        examplePalette.addColor(0xFFA8DADC);
-        examplePalette.addColor(0xFF457B9D);
-        examplePalette.addColor(0xFF1D3557);
+        examplePalette = new Palette(0xFFE63946, 0xFFF1FAEE, 0xFFA8DADC, 0xFF457B9D, 0xFF1D3557);
     }
 
     public Palette getExamplePalette() {

@@ -11,33 +11,33 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:srcCompat="@color/colorAccent" />
+        />
 
     <ImageView
         android:id="@+id/color1"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:srcCompat="@color/colorPrimary" />
+        />
 
     <ImageView
         android:id="@+id/color2"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:srcCompat="@color/colorPrimaryDark" />
+        />
 
     <ImageView
         android:id="@+id/color3"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:srcCompat="@color/colorPrimary" />
+        />
 
     <ImageView
         android:id="@+id/color4"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        app:srcCompat="@color/colorAccent" />
+        />
 </LinearLayout>
