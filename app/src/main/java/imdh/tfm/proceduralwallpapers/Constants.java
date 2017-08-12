@@ -14,4 +14,7 @@ public class Constants {
     public static final int PALETTES_SAMPLE_500 = R.raw.quinientas;
     public static final int PALETTES_SAMPLE_1000 = R.raw.mil;
 
+    //PixelatedWallpaper
+    public static final int DEFAULT_SQUARE_SIZE = 100;
+
 }

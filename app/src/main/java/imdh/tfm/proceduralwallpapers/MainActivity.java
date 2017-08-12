@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wallpaper.setImageBitmap(drawLineWallapaper(null));
+                wallpaper.setImageBitmap(drawCurrentWallpaper(null));
             }
         });
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        wallpaper.setImageBitmap(drawLineWallapaper(null));
+        wallpaper.setImageBitmap(drawCurrentWallpaper(null));
     }
 
     private void askForPermission(final String permission) {
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private Bitmap drawLineWallapaper(Palette palette) {
-        LinesWallpaper primerWallpaper = new LinesWallpaper(palette);
+    private Bitmap drawCurrentWallpaper(Palette palette) {
+        PixelizatedWallpaper primerWallpaper = new PixelizatedWallpaper(palette, 200);
         genericWallpaper = primerWallpaper;
         return primerWallpaper.getBitmap();
     }
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 Palette palette = (Palette) data.getSerializableExtra("PALETTE");
-                wallpaper.setImageBitmap(drawLineWallapaper(palette));
+                wallpaper.setImageBitmap(drawCurrentWallpaper(palette));
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 System.out.println("Resultado de la actividad cancelado");
