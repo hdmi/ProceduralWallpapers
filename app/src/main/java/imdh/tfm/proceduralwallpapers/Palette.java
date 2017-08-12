@@ -2,11 +2,13 @@ package imdh.tfm.proceduralwallpapers;
 
 import android.graphics.Color;
 
+import java.io.Serializable;
+
 /**
  * Created by CarlosAB on 06/08/2017.
  */
 
-public class Palette {
+public class Palette implements Serializable{
 
     private int c0;
     private int c1;
@@ -15,11 +17,11 @@ public class Palette {
     private int c4;
 
     public Palette(){
-        c0 = 0xFF000000;
-        c1 = 0xFF000000;
-        c2 = 0xFF000000;
-        c3 = 0xFF000000;
-        c4 = 0xFF000000;
+        c0 = 0xFFE63946;
+        c1 = 0xFFF1FAEE;
+        c2 = 0xFFA8DADC;
+        c3 = 0xFF457B9D;
+        c4 = 0xFF1D3557;
     }
 
     public Palette(int c0, int c1, int c2, int c3, int c4){

@@ -9,15 +9,18 @@ public class GenericWallpaper {
 
     protected Canvas canvas;
     private Bitmap bitmap;
+    private Palette palette;
 
     public GenericWallpaper() {
         bitmap = Bitmap.createBitmap(Constants.DEFAULT_WIDTH, Constants.DEFAULT_HEIGHT, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
+        palette = new Palette();
     }
 
     public GenericWallpaper(int width, int height) {
         bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         canvas = new Canvas(bitmap);
+        palette = new Palette();
     }
 
     public void fillWithColor(int color) {
@@ -40,5 +43,13 @@ public class GenericWallpaper {
 
     public void setBitmap(Bitmap bitmap) {
         this.bitmap = bitmap;
+    }
+
+    public Palette getPalette() {
+        return palette;
+    }
+
+    public void setPalette(Palette palette) {
+        this.palette = palette;
     }
 }

@@ -9,8 +9,11 @@ public class LinesWallpaper extends GenericWallpaper {
 
     UtilsWallpaper utilsWallpaper;
 
-    public LinesWallpaper() {
+    public LinesWallpaper(Palette newPalette) {
         super();
+        setPalette(newPalette);
+
+        if (newPalette == null) newPalette = new Palette();
 
         //Variables initialization
         lineThickness = Constants.DEFAULT_LINE_THICKNESS;
@@ -22,14 +25,12 @@ public class LinesWallpaper extends GenericWallpaper {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(lineThickness);
         mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
-        Palette examplePalette = utilsWallpaper.getExamplePalette();
 
         int deviation = canvas.getWidth();
         for (int i = -deviation; i < deviation; i = i + 1) {
-            mPaint.setColor(examplePalette.randomColor());
+            mPaint.setColor(newPalette.randomColor());
             canvas.drawLine(i, 0, i+deviation, canvas.getHeight(), mPaint);
         }
-
 
     }
 

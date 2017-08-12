@@ -1,6 +1,7 @@
 package imdh.tfm.proceduralwallpapers;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,18 +23,18 @@ public class MainActivity extends AppCompatActivity {
     private boolean isImageFitToScreen = false;
     private ImageView wallpaper;
     private GenericWallpaper genericWallpaper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wallpaper = (ImageView) findViewById(R.id.wallpaper);
 
-
         Button btnRefresh = (Button) findViewById(R.id.buttonRefresh);
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wallpaper.setImageBitmap(drawLineWallapaper());
+                wallpaper.setImageBitmap(drawLineWallapaper(null));
             }
         });
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PalettesDisplayActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
 
         });
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        wallpaper.setImageBitmap(drawLineWallapaper());
+        wallpaper.setImageBitmap(drawLineWallapaper(null));
     }
 
     private void askForPermission(final String permission) {
@@ -108,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private Bitmap drawLineWallapaper() {
-        LinesWallpaper primerWallpaper = new LinesWallpaper();
+    private Bitmap drawLineWallapaper(Palette palette) {
+        LinesWallpaper primerWallpaper = new LinesWallpaper(palette);
         genericWallpaper = primerWallpaper;
         return primerWallpaper.getBitmap();
     }
@@ -120,5 +121,17 @@ public class MainActivity extends AppCompatActivity {
         return result == PackageManager.PERMISSION_GRANTED;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                Palette palette = (Palette) data.getSerializableExtra("PALETTE");
+                wallpaper.setImageBitmap(drawLineWallapaper(palette));
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                System.out.println("Resultado de la actividad cancelado");
+            }
+        }
+    }
 }

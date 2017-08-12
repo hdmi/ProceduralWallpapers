@@ -30,7 +30,7 @@ public class UtilsWallpaper {
         examplePalette = new Palette(0xFFE63946, 0xFFF1FAEE, 0xFFA8DADC, 0xFF457B9D, 0xFF1D3557);
     }
 
-    public Palette getExamplePalette() {
+    public static Palette getExamplePalette() {
         return examplePalette;
     }
 }
