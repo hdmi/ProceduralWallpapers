@@ -1,5 +1,6 @@
 package imdh.tfm.proceduralwallpapers;
 
+import android.graphics.Color;
 import android.graphics.Paint;
 
 /**
@@ -10,6 +11,7 @@ public class PixelizatedWallpaper extends GenericWallpaper {
 
     int squareSize;
     Palette palette;
+    Paint strokePaint = new Paint();
 
     public PixelizatedWallpaper(){
         super();
@@ -30,13 +32,20 @@ public class PixelizatedWallpaper extends GenericWallpaper {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
 
+        strokePaint.setStrokeWidth(Constants.DEFAULT_LINE_THICKNESS);
+        strokePaint.setColor(Color.BLACK);
+        strokePaint.setStyle(Paint.Style.STROKE);
+
         final int width = canvas.getWidth();
-        final int height = canvas.getHeight();
-        for (int x = 0; x < width; x+=squareSize) {
-            for(int y = 0; y < height; y+=squareSize){
+        final int height =  canvas.getHeight();
+        canvas.rotate(-45, width/2, height/2);
+        for (int x = (int)(width*-.5); x < (width*1.5); x+=squareSize) {
+            for(int y = (int)(height*-.5); y < height; y+=squareSize){
                 mPaint.setColor(palette.randomColor());
                 canvas.drawRect(x, y, x+squareSize, y+squareSize, mPaint);
+                canvas.drawRect(x, y, x+squareSize, y+squareSize, strokePaint);
             }
         }
+
     }
 }

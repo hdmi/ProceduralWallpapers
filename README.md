@@ -7,8 +7,8 @@
 - Random pictures name
 - Control onResume, onPause, onStop
 - Make this todo document the README of the git repository
-- Tilt 45º the pixelated wallpaper and stroke the borders
-
+- Get random palette from the current loaded set
+- Circle Wallpapers
 
 # DONE
 - Create github repository for the TFM
@@ -23,6 +23,7 @@
 - Activity for showing palettes (recycler view)
 - Select color from PalettesActivity -> return to main activity and refresh wallpaper with selected palette
 - Pixelated wallpapers
+- Tilt 45º the pixelated wallpaper and stroke the borders
 
 # OTHER PROJECTS
 
