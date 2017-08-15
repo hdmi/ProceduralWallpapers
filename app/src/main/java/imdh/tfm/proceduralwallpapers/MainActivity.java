@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Bitmap drawCurrentWallpaper(Palette palette) {
-        PixelizatedWallpaper primerWallpaper = new PixelizatedWallpaper(palette, 200);
+        ArcsWallpaper primerWallpaper = new ArcsWallpaper(palette, 200);
         genericWallpaper = primerWallpaper;
         return primerWallpaper.getBitmap();
     }

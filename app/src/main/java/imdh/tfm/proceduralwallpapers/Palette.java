@@ -51,6 +51,17 @@ public class Palette implements Serializable{
         }
     }
 
+    public int getColorNumber(int number){
+        switch (number){
+            case 0: return c0;
+            case 1: return c1;
+            case 2: return c2;
+            case 3: return c3;
+            case 4: return c4;
+            default: return c0;
+        }
+    }
+
     @Override
     public String toString() {
         return "[-> " + c0 + ", " + c1 + ", " + c2 + ", " + c3 + ", " + c4 + " <-]";

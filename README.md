@@ -9,6 +9,7 @@
 - Make this todo document the README of the git repository
 - Get random palette from the current loaded set
 - Circle Wallpapers
+- Shift color in palette in arcs wallpaper
 
 # DONE
 - Create github repository for the TFM
@@ -24,7 +25,7 @@
 - Select color from PalettesActivity -> return to main activity and refresh wallpaper with selected palette
 - Pixelated wallpapers
 - Tilt 45º the pixelated wallpaper and stroke the borders
-
+- Arcs wallpapers implemented
 # OTHER PROJECTS
 
 # MY DOUBTS
