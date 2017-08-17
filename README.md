@@ -26,6 +26,8 @@
 - Pixelated wallpapers
 - Tilt 45º the pixelated wallpaper and stroke the borders
 - Arcs wallpapers implemented
+- Square inception wallpapers implemented
+
 # OTHER PROJECTS
 
 # MY DOUBTS
