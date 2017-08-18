@@ -1,5 +1,10 @@
 package imdh.tfm.proceduralwallpapers;
 
+import android.app.WallpaperManager;
+import android.content.Context;
+import android.graphics.Bitmap;
+
+import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -32,5 +37,14 @@ public class UtilsWallpaper {
 
     public static Palette getExamplePalette() {
         return examplePalette;
+    }
+
+    public static void setWallpaper2Desktop(Bitmap bitmap, Context context){
+        WallpaperManager myWallpaperManager = WallpaperManager.getInstance(context);
+        try {
+            myWallpaperManager.setBitmap(bitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -3,6 +3,7 @@ package imdh.tfm.proceduralwallpapers;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.support.design.widget.Snackbar;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,6 +35,12 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
         saveBitmap(bitmap);
         return null;
     }
+
+    protected void onPostExecute(Long result) {
+        Snackbar.make(findViewById(android.R.id.content), "Image saved", Snackbar.LENGTH_SHORT)
+                .show();
+    }
+
 
     private void saveBitmap(Bitmap bitmap){
         File fileBitmap = new File(directory, "wallpaper_" + System.currentTimeMillis()+ ".png");

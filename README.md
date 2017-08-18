@@ -27,6 +27,7 @@
 - Tilt 45º the pixelated wallpaper and stroke the borders
 - Arcs wallpapers implemented
 - Square inception wallpapers implemented
+- Method to set Bitmap as desktop wallpaper
 
 # OTHER PROJECTS
 

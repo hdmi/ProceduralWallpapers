@@ -99,7 +99,6 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
                 resultIntent.putExtra("PALETTE", palette);
                 mAppCompatActivity.setResult(Activity.RESULT_OK, resultIntent);
                 mAppCompatActivity.finish();
-
             }
         }
     }

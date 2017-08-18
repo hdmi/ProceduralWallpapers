@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wallpaper.setImageBitmap(drawCurrentWallpaper(null));
+                wallpaper.setImageBitmap(drawCurrentWallpaper(PaletteDatabase.getInstance(getApplicationContext()).getRandomPalette()));
             }
         });
 
@@ -71,6 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 if(doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                     new BitmapStorageExport(genericWallpaper.getBitmap()).execute();
                 }
+            }
+        });
+
+        Button btnSetWallpaper = (Button) findViewById(R.id.buttonSetWallpaper);
+        btnSetWallpaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UtilsWallpaper.setWallpaper2Desktop(genericWallpaper.getBitmap(), MainActivity.this);
             }
         });
 
