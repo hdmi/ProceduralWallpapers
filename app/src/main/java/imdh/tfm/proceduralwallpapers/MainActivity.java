@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wallpaper.setImageBitmap(drawCurrentWallpaper(PaletteDatabase.getInstance(getApplicationContext()).getRandomPalette()));
+                wallpaper.setImageBitmap(drawCurrentWallpaper(null));
             }
         });
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                    new BitmapStorageExport(genericWallpaper.getBitmap()).execute();
+                    new BitmapStorageExport(genericWallpaper.getBitmap(), findViewById(android.R.id.content)).execute();
                 }
             }
         });
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Bitmap drawCurrentWallpaper(Palette palette) {
-        SquareInceptionWallpaper primerWallpaper = new SquareInceptionWallpaper(palette);
+        RandomWallpaper primerWallpaper = new RandomWallpaper(palette, getApplicationContext());
         genericWallpaper = primerWallpaper;
         return primerWallpaper.getBitmap();
     }

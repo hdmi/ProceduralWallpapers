@@ -1,15 +1,15 @@
 # TODO
 
 - Logs library for debugging
-- Snackbar al acabar de guardar
 - Crear diálogo al guardar
 - Escribir email al tutor TFM
 - Random pictures name
 - Control onResume, onPause, onStop
-- Make this todo document the README of the git repository
-- Get random palette from the current loaded set
 - Circle Wallpapers
-- Shift color in palette in arcs wallpaper
+- When exporting, generate the same image in a bigger resolution
+- App drawer (main, preferencias)
+- Preferences activity
+- Palette picking through palette activity generates the same wallpaper but switching colors
 
 # DONE
 - Create github repository for the TFM
@@ -28,8 +28,16 @@
 - Arcs wallpapers implemented
 - Square inception wallpapers implemented
 - Method to set Bitmap as desktop wallpaper
+- Snackbar al acabar de guardar
+- Get random palette from the current loaded set
+- Make this todo document the README of the git repository
+- Refresh button generate random wallpaper
 
-# OTHER PROJECTS
+# IMPLEMENTED WALLPAPERS
+- Arcs wallpaper
+- Lines wallpaper
+- Pixelizated wallpaper
+- Square inception wallpaper
 
 # MY DOUBTS
  - ¿A la clase LocalStorage tengo que enviarle un bitmap o un modelo tipo wallpaper?

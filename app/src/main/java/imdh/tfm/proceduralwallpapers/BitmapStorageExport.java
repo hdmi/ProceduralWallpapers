@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.support.design.widget.Snackbar;
+import android.view.View;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,9 +21,12 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
     private File directory;
     private Bitmap bitmap;
 
-    public BitmapStorageExport(Bitmap bitmap){
+    private View content;
+
+    public BitmapStorageExport(Bitmap bitmap, View content){
         //Check directory if exists, otherwise create it
         this.bitmap = bitmap;
+        this.content = content;
         directory = new File(file_path);
         if(!directory.exists()){
             directory.mkdirs();
@@ -36,11 +40,12 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
         return null;
     }
 
-    protected void onPostExecute(Long result) {
-        Snackbar.make(findViewById(android.R.id.content), "Image saved", Snackbar.LENGTH_SHORT)
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+        Snackbar.make(content, R.string.image_saved_snackbar, Snackbar.LENGTH_LONG)
                 .show();
     }
-
 
     private void saveBitmap(Bitmap bitmap){
         File fileBitmap = new File(directory, "wallpaper_" + System.currentTimeMillis()+ ".png");
@@ -53,6 +58,7 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
             System.out.println("guardao");
         } catch (java.io.IOException e) {
             e.printStackTrace();
+            cancel(true);
         }
     }
 }

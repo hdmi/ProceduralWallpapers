@@ -16,7 +16,7 @@ public class LinesWallpaper extends GenericWallpaper {
         if (newPalette == null) newPalette = new Palette();
 
         //Variables initialization
-        lineThickness = Constants.DEFAULT_LINE_THICKNESS;
+        lineThickness = 15;
         backgroundColor = new OneColor(0xFFFFFFFF);
         utilsWallpaper = utilsWallpaper.getInstance();
 
@@ -27,7 +27,7 @@ public class LinesWallpaper extends GenericWallpaper {
         mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
 
         int deviation = canvas.getWidth();
-        for (int i = -deviation; i < deviation; i = i + 1) {
+        for (int i = -deviation; i < deviation; i = i + lineThickness) {
             mPaint.setColor(newPalette.randomColor());
             canvas.drawLine(i, 0, i+deviation, canvas.getHeight(), mPaint);
         }

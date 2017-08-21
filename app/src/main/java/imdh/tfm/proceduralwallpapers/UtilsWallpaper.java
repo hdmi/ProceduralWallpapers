@@ -47,4 +47,5 @@ public class UtilsWallpaper {
             e.printStackTrace();
         }
     }
+
 }
