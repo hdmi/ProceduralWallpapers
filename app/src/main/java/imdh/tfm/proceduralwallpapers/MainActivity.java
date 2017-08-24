@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
+
 import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PalettesDisplayActivity.class);
                 startActivityForResult(intent, 1);
+            }
+
+        });
+
+        Button btnOpenPager = (Button) findViewById(R.id.buttonOpenPager);
+        btnOpenPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainPagerActivity.class);
+                startActivity(intent);
             }
 
         });
