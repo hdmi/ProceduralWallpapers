@@ -17,15 +17,13 @@ import imdh.tfm.proceduralwallpapers.fragments.ThirdFragment;
  */
 
 public class MainPagerActivity extends FragmentActivity {
-    private static final int NUMBER_OF_PAGES = 3;
-    ViewPager pager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager_main);
-        pager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
@@ -36,8 +34,8 @@ public class MainPagerActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int pos) {
+            System.out.println(pos);
             switch(pos) {
-
                 case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
                 case 1: return SecondFragment.newInstance("SecondFragment, Instance 1");
                 case 2: return ThirdFragment.newInstance("ThirdFragment, Instance 1");

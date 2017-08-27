@@ -18,15 +18,15 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.third_fragment, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
+        TextView tv = (TextView) v.findViewById(R.id.tvFragThird);
         tv.setText(getArguments().getString("msg"));
 
         return v;
     }
 
-    public static FirstFragment newInstance(String text) {
+    public static ThirdFragment newInstance(String text) {
 
-        FirstFragment f = new FirstFragment();
+        ThirdFragment f = new ThirdFragment();
         Bundle b = new Bundle();
         b.putString("msg", text);
 
