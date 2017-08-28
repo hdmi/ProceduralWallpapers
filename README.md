@@ -7,9 +7,10 @@
 - Control onResume, onPause, onStop
 - Circle Wallpapers
 - When exporting, generate the same image in a bigger resolution
-- App drawer (main, preferencias)
+- App drawer (main, preferences)
 - Preferences activity
 - Palette picking through palette activity generates the same wallpaper but switching colors
+- Fix beginning and ending of lines in Lines Wallpapers
 
 # DONE
 - Create github repository for the TFM
@@ -47,3 +48,4 @@
 https://stackoverflow.com/questions/8102741/android-how-to-use-string-resource-in-a-java-class
 https://guides.codepath.com/android/Using-the-RecyclerView#installation
 http://www.androidhive.info/2012/01/android-json-parsing-tutorial/
+https://medium.com/@loutry/guide-to-constraintlayout-407cd87bc013

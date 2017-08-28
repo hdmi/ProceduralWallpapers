@@ -17,4 +17,7 @@ public class Constants {
     //PixelatedWallpaper
     public static final int DEFAULT_SQUARE_SIZE = 200;
 
+    //
+    public static final int ANIMATION_DURATION_1_SEC = 1000;
+
 }

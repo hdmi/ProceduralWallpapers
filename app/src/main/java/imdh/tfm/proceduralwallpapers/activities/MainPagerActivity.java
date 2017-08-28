@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import imdh.tfm.proceduralwallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
 import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;
@@ -17,6 +18,8 @@ import imdh.tfm.proceduralwallpapers.fragments.ThirdFragment;
  */
 
 public class MainPagerActivity extends FragmentActivity {
+
+    private GenericWallpaper genericWallpaper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

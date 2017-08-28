@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="round_icon_big">100dp</dimen>
+    <dimen name="round_icon_small">80dp</dimen>
+</resources>
