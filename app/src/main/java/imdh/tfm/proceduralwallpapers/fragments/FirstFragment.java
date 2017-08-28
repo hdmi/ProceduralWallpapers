@@ -126,6 +126,13 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wallpaperImageView.setImageBitmap(drawCurrentWallpaper(null));
+            }
+        });
+
         return v;
     }
 

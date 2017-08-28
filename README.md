@@ -33,6 +33,7 @@
 - Get random palette from the current loaded set
 - Make this todo document the README of the git repository
 - Refresh button generate random wallpaper
+- Refactor and implement MVP
 
 # IMPLEMENTED WALLPAPERS
 - Arcs wallpaper
