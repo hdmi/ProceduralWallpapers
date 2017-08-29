@@ -1,7 +1,9 @@
 package imdh.tfm.proceduralwallpapers.fragments;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,10 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import imdh.tfm.proceduralwallpapers.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.Palette;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.UtilsWallpaper;
+import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
 
 import static imdh.tfm.proceduralwallpapers.Constants.ANIMATION_DURATION_1_SEC;
 
@@ -30,6 +37,8 @@ public class FirstFragment extends Fragment {
     private ImageView wallpaperImageView;
 
     private boolean buttonsVisibility;
+
+    private GenericWallpaper currentWallpaper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -126,13 +135,36 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        imageButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 wallpaperImageView.setImageBitmap(drawCurrentWallpaper(null));
             }
         });
 
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UtilsWallpaper.setWallpaper2Desktop(currentWallpaper.getBitmap(), getActivity().getApplicationContext());
+                Toast.makeText(getActivity().getApplicationContext(), R.string.wallpaper_set, Toast.LENGTH_SHORT).show();
+
+                getActivity().finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainPagerActivity) getActivity()).askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if(((MainPagerActivity) getActivity()).doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                    new BitmapStorageExport(currentWallpaper.getBitmap(), getActivity().findViewById(android.R.id.content)).execute();
+                }
+            }
+        });
         return v;
     }
 
@@ -145,7 +177,8 @@ public class FirstFragment extends Fragment {
     }
 
     private Bitmap drawCurrentWallpaper(Palette palette) {
-        RandomWallpaper primerWallpaper = new RandomWallpaper(palette, getContext().getApplicationContext());
-        return primerWallpaper.getBitmap();
+        RandomWallpaper randomWallpaper = new RandomWallpaper(palette, getContext().getApplicationContext());
+        currentWallpaper = randomWallpaper;
+        return randomWallpaper.getBitmap();
     }
 }

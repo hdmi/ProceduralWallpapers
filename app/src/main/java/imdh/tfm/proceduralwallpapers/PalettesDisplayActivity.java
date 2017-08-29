@@ -16,7 +16,7 @@ public class PalettesDisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.palettes_display_layout);
 
-        RecyclerView recyclerViewPalettes = (RecyclerView) findViewById(R.id.rvPalettes);
+        RecyclerView recyclerViewPalettes = (RecyclerView) findViewById(R.id.rvPalettess);
 
         PalettesAdapter adapter = new PalettesAdapter(this, PaletteDatabase.getInstance(getApplicationContext()).getPalettes());
         recyclerViewPalettes.setAdapter(adapter);

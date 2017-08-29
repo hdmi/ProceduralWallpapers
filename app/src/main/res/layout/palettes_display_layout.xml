@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="?android:attr/selectableItemBackground">
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvPalettes"
+        android:id="@+id/rvPalettess"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
