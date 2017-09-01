@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.utils;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -8,6 +8,8 @@ import android.view.View;
 
 import java.io.File;
 import java.io.FileOutputStream;
+
+import imdh.tfm.proceduralwallpapers.R;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
 /**

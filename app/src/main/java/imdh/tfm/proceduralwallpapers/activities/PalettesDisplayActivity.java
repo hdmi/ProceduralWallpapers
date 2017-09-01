@@ -1,9 +1,13 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import imdh.tfm.proceduralwallpapers.PaletteDatabase;
+import imdh.tfm.proceduralwallpapers.PalettesAdapter;
+import imdh.tfm.proceduralwallpapers.R;
 
 /**
  * Created by CarlosAB on 09/08/2017.

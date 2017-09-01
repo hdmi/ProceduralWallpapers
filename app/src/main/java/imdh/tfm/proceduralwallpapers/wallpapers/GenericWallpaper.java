@@ -1,8 +1,11 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.wallpapers;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
+import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.models.Palette;
 
 
 public class GenericWallpaper {

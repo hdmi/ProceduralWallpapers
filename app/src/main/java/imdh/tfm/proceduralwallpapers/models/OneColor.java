@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.models;
 
 /**
  * Created by CarlosAB on 06/08/2017.

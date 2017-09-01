@@ -13,7 +13,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import imdh.tfm.proceduralwallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
 import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;

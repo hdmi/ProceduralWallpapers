@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,7 +17,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
+import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.R;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 

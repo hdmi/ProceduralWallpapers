@@ -14,12 +14,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import imdh.tfm.proceduralwallpapers.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.GenericWallpaper;
-import imdh.tfm.proceduralwallpapers.Palette;
+import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.models.Palette;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.RandomWallpaper;
-import imdh.tfm.proceduralwallpapers.UtilsWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
 
 import static imdh.tfm.proceduralwallpapers.Constants.ANIMATION_DURATION_1_SEC;

@@ -1,8 +1,12 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.wallpapers;
 
 import android.content.Context;
 
-import static imdh.tfm.proceduralwallpapers.UtilsWallpaper.randomBetween;
+import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.PaletteDatabase;
+
+import static imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper.randomBetween;
 
 /**
  * Created by CarlosAB on 21/08/2017.

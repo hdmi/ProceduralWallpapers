@@ -1,6 +1,10 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.wallpapers;
 
 import android.graphics.Paint;
+
+import imdh.tfm.proceduralwallpapers.models.OneColor;
+import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 public class LinesWallpaper extends GenericWallpaper {
 

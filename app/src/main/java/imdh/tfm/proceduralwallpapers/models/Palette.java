@@ -1,8 +1,10 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.models;
 
 import android.graphics.Color;
 
 import java.io.Serializable;
+
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 /**
  * Created by CarlosAB on 06/08/2017.

@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.utils;
 
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 
 import java.io.IOException;
 import java.util.Random;
+
+import imdh.tfm.proceduralwallpapers.models.Palette;
 
 /**
  * Created by CarlosAB on 06/08/2017.

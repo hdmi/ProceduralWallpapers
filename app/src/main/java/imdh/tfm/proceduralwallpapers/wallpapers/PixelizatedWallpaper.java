@@ -1,7 +1,10 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.wallpapers;
 
 import android.graphics.Color;
 import android.graphics.Paint;
+
+import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.models.Palette;
 
 /**
  * Created by CarlosAB on 12/08/2017.
