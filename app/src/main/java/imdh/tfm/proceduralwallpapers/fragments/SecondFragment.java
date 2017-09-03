@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import imdh.tfm.proceduralwallpapers.PaletteDatabase;
-import imdh.tfm.proceduralwallpapers.PalettesAdapter;
+import imdh.tfm.proceduralwallpapers.adapters.PalettesAdapter;
 import imdh.tfm.proceduralwallpapers.R;
 
 /**
@@ -31,7 +31,7 @@ public class SecondFragment extends Fragment {
         return v;
     }
 
-    public static SecondFragment newInstance(String text) {
+    public static SecondFragment newInstance() {
         SecondFragment f = new SecondFragment();
         return f;
     }

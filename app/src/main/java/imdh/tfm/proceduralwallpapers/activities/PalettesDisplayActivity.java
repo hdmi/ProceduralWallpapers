@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import imdh.tfm.proceduralwallpapers.PaletteDatabase;
-import imdh.tfm.proceduralwallpapers.PalettesAdapter;
+import imdh.tfm.proceduralwallpapers.adapters.PalettesAdapter;
 import imdh.tfm.proceduralwallpapers.R;
 
 /**

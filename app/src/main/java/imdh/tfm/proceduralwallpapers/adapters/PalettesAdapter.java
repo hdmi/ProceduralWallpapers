@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import java.util.List;
 
+import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.models.Palette;
 
 /**
