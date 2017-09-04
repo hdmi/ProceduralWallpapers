@@ -2,15 +2,20 @@
 
 - Logs library for debugging
 - Crear diálogo al guardar
-- Escribir email al tutor TFM
-- Random pictures name
+- Random pictures folder name
 - Control onResume, onPause, onStop
 - Circle Wallpapers
 - When exporting, generate the same image in a bigger resolution
 - App drawer (main, preferences)
 - Preferences activity
-- Palette picking through palette activity generates the same wallpaper but switching colors
+- Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Fix beginning and ending of lines in Lines Wallpapers
+- Refactor and implement MVP
+- Gallery crashes when there is no saved/liked wallpapers
+- Relevant window titles in each fragment
+- Colored toasts
+- Priorize recdnt palettes in the palettes display fragment
+- Share button in the toolbar (momentary location)
 
 # DONE
 - Create github repository for the TFM
@@ -33,17 +38,15 @@
 - Get random palette from the current loaded set
 - Make this todo document the README of the git repository
 - Refresh button generate random wallpaper
-- Refactor and implement MVP
+- Escribir email al tutor TFM
+- Splash screen
+
 
 # IMPLEMENTED WALLPAPERS
 - Arcs wallpaper
 - Lines wallpaper
 - Pixelizated wallpaper
 - Square inception wallpaper
-
-# MY DOUBTS
- - ¿A la clase LocalStorage tengo que enviarle un bitmap o un modelo tipo wallpaper?
-
 
 # INTERESTING URLS
 https://stackoverflow.com/questions/8102741/android-how-to-use-string-resource-in-a-java-class
