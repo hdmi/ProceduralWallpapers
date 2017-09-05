@@ -7,15 +7,21 @@
 - Circle Wallpapers
 - When exporting, generate the same image in a bigger resolution
 - App drawer (main, preferences)
-- Preferences activity
 - Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Fix beginning and ending of lines in Lines Wallpapers
 - Refactor and implement MVP
 - Gallery crashes when there is no saved/liked wallpapers
 - Relevant window titles in each fragment
 - Colored toasts
-- Priorize recdnt palettes in the palettes display fragment
+- Priorize recent palettes in the palettes display fragment
 - Share button in the toolbar (momentary location)
+- Jobschedule a routine for updating the wallpaper automatically
+- Preferences activity
+- Update interval in preferences
+- Images for the app intro
+- New image for the gallery when it is empty
+
+
 
 # DONE
 - Create github repository for the TFM
@@ -40,7 +46,7 @@
 - Refresh button generate random wallpaper
 - Escribir email al tutor TFM
 - Splash screen
-
+- App intro
 
 # IMPLEMENTED WALLPAPERS
 - Arcs wallpaper

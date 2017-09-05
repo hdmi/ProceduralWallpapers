@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.adapters.SavedWallpapersAdapter;
+import imdh.tfm.proceduralwallpapers.adapters.GalleryWallpapersAdapter;
 
 /**
  * Created by CarlosAB on 24/08/2017.
@@ -20,10 +20,14 @@ public class ThirdFragment extends Fragment {
         View v = inflater.inflate(R.layout.third_fragment, container, false);
 
         GridView gridview = (GridView) v.findViewById(R.id.grid_gallery);
-        gridview.setAdapter(new SavedWallpapersAdapter(getActivity()));
+        gridview.setAdapter(new GalleryWallpapersAdapter(getActivity()));
 
-        getActivity().setTitle("Mi Galería");
-
+        if(gridview.getCount() <= 0){
+            gridview.setBackground(getResources().getDrawable(R.drawable.gallery_background));
+        }
+        else{
+            gridview.setBackgroundDrawable(null);
+        }
         return v;
     }
 

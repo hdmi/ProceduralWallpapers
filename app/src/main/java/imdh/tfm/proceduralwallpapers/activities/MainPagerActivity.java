@@ -1,8 +1,11 @@
 package imdh.tfm.proceduralwallpapers.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,13 +16,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
 import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;
 import imdh.tfm.proceduralwallpapers.fragments.ThirdFragment;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
+import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
 
 /**
  * Created by CarlosAB on 24/08/2017.
@@ -33,7 +37,7 @@ public class MainPagerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager_main);
-        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager pager = (ViewPager) findViewById(viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         setTitle(R.string.app_title);
 
@@ -47,6 +51,22 @@ public class MainPagerActivity extends AppCompatActivity {
 //                | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+
+        setTitle(R.string.app_title);
+        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            public void onPageScrollStateChanged(int state) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageSelected(int position) {
+                switch(position){
+                    case 0: setTitle(R.string.app_title); break;
+                    case 1: setTitle(R.string.palettes_showcase_title); break;
+                    case 2: setTitle(R.string.gallery_title); break;
+                    default: setTitle(R.string.app_title); break;
+                }
+            }
+        });
+
+        firstTimeRun();
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
@@ -59,7 +79,7 @@ public class MainPagerActivity extends AppCompatActivity {
         public Fragment getItem(int pos) {
             System.out.println(pos);
             switch(pos) {
-                case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
+                case 0: return FirstFragment.newInstance();
                 case 1: return SecondFragment.newInstance();
                 case 2: return ThirdFragment.newInstance();
                 default: return ThirdFragment.newInstance();
@@ -108,5 +128,30 @@ public class MainPagerActivity extends AppCompatActivity {
     {
         int result = this.checkCallingOrSelfPermission(permission);
         return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public void firstTimeRun(){
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //  Initialize SharedPreferences
+                SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                boolean isFirstStart = getPrefs.getBoolean("firstStart", true);
+                if (isFirstStart) {
+
+                    //  Launch app intro
+                    Intent i = new Intent(MainPagerActivity.this, IntroActivity.class);
+                    MainPagerActivity.this.startActivity(i);
+
+                    //  Make a new preferences editor
+                    SharedPreferences.Editor e = getPrefs.edit();
+
+                    //  Edit preference to make it false because we don't want this to run again
+                    e.putBoolean("firstStart", false);
+                    e.apply();
+                }
+            }
+        });
+        t.start();
     }
 }

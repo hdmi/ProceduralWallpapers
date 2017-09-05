@@ -168,11 +168,11 @@ public class FirstFragment extends Fragment {
         return v;
     }
 
-    public static FirstFragment newInstance(String text) {
+    public static FirstFragment newInstance() {
         FirstFragment f = new FirstFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-        f.setArguments(b);
+//        Bundle b = new Bundle();
+//        b.putString("msg", text);
+//        f.setArguments(b);
         return f;
     }
 

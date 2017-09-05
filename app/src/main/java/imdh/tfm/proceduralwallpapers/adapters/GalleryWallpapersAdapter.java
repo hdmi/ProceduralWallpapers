@@ -22,7 +22,7 @@ import static android.os.Environment.DIRECTORY_PICTURES;
  * Created by CarlosAB on 09/08/2017.
  */
 
-public class SavedWallpapersAdapter extends BaseAdapter {
+public class GalleryWallpapersAdapter extends BaseAdapter {
 
     private Context mContext;
     private final LayoutInflater mInflater;
@@ -31,15 +31,17 @@ public class SavedWallpapersAdapter extends BaseAdapter {
     private final String MEDIA_STORAGE_DIR = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + R.string.app_name;
     private final String[] SUPPORTED_IMAGES = {"jpeg", "jpg", "png", "JPG", "JPEG", "PNG"};
 
-    public SavedWallpapersAdapter(Context c) {
+    public GalleryWallpapersAdapter(Context c) {
         mContext = c;
         mInflater = LayoutInflater.from(c);
+        images = new ArrayList<File>();
         try{
             File dir = new File(MEDIA_STORAGE_DIR);
             files = dir.listFiles();
             images = stripNonImages(files);
         //TODO: Change this exception to a suited exception
         }catch (Exception fnfe){System.err.print("No existe el directorio de imágenes"+fnfe);}
+
     }
 
 
@@ -67,13 +69,10 @@ public class SavedWallpapersAdapter extends BaseAdapter {
             v = mInflater.inflate(R.layout.item_wallpaper, parent, false);
         }
         picture = (ImageView) v.findViewById(R.id.imageItemGridView);
-        Glide
-                .with(mContext)
+        Glide.with(mContext)
                 .load(images.get(position))
                 .thumbnail(.1f)
                 .into(picture);
-
-        //picture.setImageBitmap(thumbnailGenerator.checkThumb(images.get(position)));
 
         return v;
     }
@@ -105,4 +104,5 @@ public class SavedWallpapersAdapter extends BaseAdapter {
         }
         return false;
     }
+
 }

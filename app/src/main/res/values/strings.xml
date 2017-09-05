@@ -5,4 +5,17 @@
     <string name="storage_permission_title">Permiso de almacenamiento</string>
     <string name="image_saved_snackbar">Imagen guardada</string>
     <string name="wallpaper_set">Imagen establecida como fondo de pantalla</string>
+    <string name="palettes_showcase_title">Escaparate de colores</string>
+    <string name="gallery_title">Mi galería</string>
+
+    <string name="Slide1_title">Bienvenido a la Fábrica de Wallpapers</string>
+    <string name="Slide1_description">Con esta aplicación podrás generar bonitos fondos de pantalla únicos</string>
+    <string name="Slide2_title">¿Cómo se utiliza?</string>
+    <string name="Slide2_description">El funcionamiento es muy sencillo, la pantalla principal ya muestra un fondo de pantalla automáticamente generado</string>
+    <string name="Slide3_title">¿No te convence?</string>
+    <string name="Slide3_description">Pulsa el botón refrescar para generar un wallpaper nuevo, pulsa ✔ para establecerlo como fondo de pantalla, y pulsa el corazón para guardarlo</string>
+    <string name="Slide4_title">Escaparate de colores</string>
+    <string name="Slide4_description">Desliza la pantalla principal hacía la derecha y descubre nuevas combinacions de colores para los fondos de pantalla</string>
+    <string name="Slide5_title">¡Por último!</string>
+    <string name="Slide5_description">Utiliza la galería para visualizar tus ¡Me encanta!. Todos los fondos se guardarán en la galería de imágenes común para poder compartirlos.</string>
 </resources>

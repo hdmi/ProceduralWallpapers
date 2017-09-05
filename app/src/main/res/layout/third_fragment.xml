@@ -9,4 +9,5 @@
     android:horizontalSpacing="5dp"
     android:stretchMode="columnWidth"
     android:gravity="center"
+    android:background="@drawable/gallery_background"
     />
