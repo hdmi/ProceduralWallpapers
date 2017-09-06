@@ -147,7 +147,6 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 UtilsWallpaper.setWallpaper2Desktop(currentWallpaper.getBitmap(), getActivity().getApplicationContext());
                 Toast.makeText(getActivity().getApplicationContext(), R.string.wallpaper_set, Toast.LENGTH_SHORT).show();
-
                 getActivity().finish();
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_HOME);

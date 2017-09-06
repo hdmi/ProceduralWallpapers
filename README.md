@@ -1,7 +1,7 @@
 # TODO
 
 - Logs library for debugging
-- Crear diálogo al guardar
+- Create dialog while saving
 - Random pictures folder name
 - Control onResume, onPause, onStop
 - Circle Wallpapers
@@ -10,22 +10,20 @@
 - Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Fix beginning and ending of lines in Lines Wallpapers
 - Refactor and implement MVP
-- Gallery crashes when there is no saved/liked wallpapers
 - Relevant window titles in each fragment
 - Colored toasts
-- Priorize recent palettes in the palettes display fragment
+- Prioritize recent palettes in the palettes display fragment
 - Share button in the toolbar (momentary location)
-- Jobschedule a routine for updating the wallpaper automatically
 - Preferences activity
 - Update interval in preferences
 - Images for the app intro
 - New image for the gallery when it is empty
-
-
+- Block landscape mode
+- Bug, when you start the app from 0 (deleted data) and there's still images in the local phone gallery, when you go to the app gallery no images are shown.
 
 # DONE
 - Create github repository for the TFM
-- Change storage varible from canvas to bitmap
+- Change storage variable from canvas to bitmap
 - Button to update wallpaper
 - First POC 6 of August 2k17
 - Palette class
@@ -47,6 +45,10 @@
 - Escribir email al tutor TFM
 - Splash screen
 - App intro
+- Gallery crashes when there is no saved/liked wallpapers
+- Disable save button 1 second after saving
+- Schedule a routine for updating the wallpaper automatically
+
 
 # IMPLEMENTED WALLPAPERS
 - Arcs wallpaper
