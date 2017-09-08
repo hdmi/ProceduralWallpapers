@@ -24,6 +24,7 @@
         <activity android:name=".activities.PalettesDisplayActivity"/>
         <activity android:name=".activities.MainPagerActivity"/>
         <activity android:name=".activities.IntroActivity"/>
+        <activity android:name=".activities.PreferencesActivity"/>
     </application>
 
 </manifest>

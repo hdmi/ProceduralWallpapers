@@ -8,6 +8,8 @@
     <string name="palettes_showcase_title">Escaparate de colores</string>
     <string name="gallery_title">Mi galería</string>
 
+
+    <!--Introduction-->
     <string name="Slide1_title">Bienvenido a la Fábrica de Wallpapers</string>
     <string name="Slide1_description">Con esta aplicación podrás generar bonitos fondos de pantalla únicos</string>
     <string name="Slide2_title">¿Cómo se utiliza?</string>
@@ -18,4 +20,18 @@
     <string name="Slide4_description">Desliza la pantalla principal hacía la derecha y descubre nuevas combinacions de colores para los fondos de pantalla</string>
     <string name="Slide5_title">¡Por último!</string>
     <string name="Slide5_description">Utiliza la galería para visualizar tus ¡Me encanta!. Todos los fondos se guardarán en la galería de imágenes común para poder compartirlos.</string>
+
+    <!--Preferences-->
+    <!--TODO: Change these strings as it is a example from internet-->
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="pref_send_report">Send crash reports</string>
+    <string name="pref_send_report_summary">Helps to fix bugs</string>
+    <string name="pref_sync_frequency">Update frequency</string>
+    <string name="pref_sync_frequency_summary">Set the wallpaper update frequency</string>
+    <string name="pref_user_name">Set username</string>
+    <string name="pref_user_name_summary">Set your username</string>
+    <string name="pref_user_profile">User Profile</string>
+    <string name="pref_update_setting">Update Settings</string>
 </resources>

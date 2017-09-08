@@ -2,6 +2,8 @@ package imdh.tfm.proceduralwallpapers;
 
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import com.evernote.android.job.JobManager;
 
@@ -17,6 +19,10 @@ public class App extends Application{
 
         JobManager.create(this).addJobCreator(JobCreator.getInstance());
         UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) JobCreator.getInstance().create(UpdateWallpaperJob.TAG);
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPrefs.getInt()
+
         updateWallpaperJob.scheduleJob(periodicInterval);
     }
 }
