@@ -22,14 +22,19 @@ class UpdateWallpaperJob extends Job {
         System.out.println(TAG+": running");
         UtilsWallpaper.setWallpaper2Desktop(new RandomWallpaper(null, this.getContext()).getBitmap(), this.getContext());
 //        scheduleJob();
+
+        this.getParams().getId();
+
         return Result.SUCCESS;
     }
 
-    public static void scheduleJob() {
-        System.out.println(TAG+": scheduled");
+    public static void scheduleJob(long periodicInterval) {
+        if(periodicInterval < Constants.MIN_PERIODIC_INTERVAL){
+            periodicInterval = Constants.MIN_PERIODIC_INTERVAL;
+        }
         new JobRequest.Builder(UpdateWallpaperJob.TAG)
-//                .setExecutionWindow(1_000L, 2_000L)
-                .setPeriodic(900_000L, 900_000L)
+//              .setExecutionWindow(1_000L, 2_000L)
+                .setPeriodic(periodicInterval, periodicInterval)
                 .build()
                 .schedule();
     }

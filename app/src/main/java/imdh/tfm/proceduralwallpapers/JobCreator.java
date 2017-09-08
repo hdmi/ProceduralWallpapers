@@ -9,16 +9,29 @@ import com.evernote.android.job.Job;
 
 public class JobCreator implements com.evernote.android.job.JobCreator{
 
+    private static JobCreator instance = new JobCreator();
+    private Job updateWallpaperJob;
+
+    private JobCreator(){}
+
+    public static JobCreator getInstance(){
+        return instance;
+    }
+
     @Override
     public Job create(String tag) {
-        System.out.println("JobCreator");
+        if(tag.equals(UpdateWallpaperJob.TAG)){
+            updateWallpaperJob = new UpdateWallpaperJob();
+            return updateWallpaperJob;
+        }
+        return null;
+    }
 
-        switch (tag) {
-            case UpdateWallpaperJob.TAG:
-                System.out.println("job creado");
-                return new UpdateWallpaperJob();
-            default:
-                return null;
+    public void destroy(){
+        if(updateWallpaperJob != null){
+            updateWallpaperJob.cancel();
         }
     }
+
+
 }

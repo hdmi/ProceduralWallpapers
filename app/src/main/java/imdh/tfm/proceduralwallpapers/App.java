@@ -15,9 +15,8 @@ public class App extends Application{
         super.onCreate();
         System.out.println("APplciation extasion");
 
-        com.evernote.android.job.JobCreator jobCreator = new JobCreator();
-        JobManager.create(this).addJobCreator(jobCreator);
-        UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) jobCreator.create(UpdateWallpaperJob.TAG);
-        updateWallpaperJob.scheduleJob();
+        JobManager.create(this).addJobCreator(JobCreator.getInstance());
+        UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) JobCreator.getInstance().create(UpdateWallpaperJob.TAG);
+        updateWallpaperJob.scheduleJob(periodicInterval);
     }
 }

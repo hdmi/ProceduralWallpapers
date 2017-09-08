@@ -20,4 +20,7 @@ public class Constants {
     //
     public static final int ANIMATION_DURATION_1_SEC = 1000;
 
+    //Jobs
+    public static final long MIN_PERIODIC_INTERVAL = 900_000L;
+
 }
