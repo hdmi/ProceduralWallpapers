@@ -12,17 +12,29 @@ import com.evernote.android.job.JobManager;
  */
 
 public class App extends Application{
+
     @Override
     public void onCreate() {
         super.onCreate();
-        System.out.println("APplciation extasion");
+        preferencesChanged();
+    }
 
-        JobManager.create(this).addJobCreator(JobCreator.getInstance());
-        UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) JobCreator.getInstance().create(UpdateWallpaperJob.TAG);
+    public void preferencesChanged(){
+        System.out.println("preferenceChanged");
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        sharedPrefs.getInt()
+        long frequency = Long.parseLong(sharedPrefs.getString("prefSyncFrequency", "-1")) * 1000L * 60L;
+        System.out.println("Frequency from prefences: "+ frequency);
 
-        updateWallpaperJob.scheduleJob(periodicInterval);
+        JobManager.create(this).addJobCreator(JobCreator.getInstance());
+
+        if(frequency <= 0){
+            JobCreator.getInstance().destroy();
+            return;
+        }
+        else{
+            UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) JobCreator.getInstance().create(UpdateWallpaperJob.TAG);
+            updateWallpaperJob.scheduleJob(frequency);
+        }
     }
 }

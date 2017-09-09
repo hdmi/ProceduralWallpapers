@@ -21,7 +21,11 @@ public class JobCreator implements com.evernote.android.job.JobCreator{
     @Override
     public Job create(String tag) {
         if(tag.equals(UpdateWallpaperJob.TAG)){
-            updateWallpaperJob = new UpdateWallpaperJob();
+            System.out.println("Job was already created");
+            if(updateWallpaperJob == null){
+                System.out.println("Job created");
+                updateWallpaperJob = new UpdateWallpaperJob();
+            }
             return updateWallpaperJob;
         }
         return null;
@@ -29,8 +33,13 @@ public class JobCreator implements com.evernote.android.job.JobCreator{
 
     public void destroy(){
         if(updateWallpaperJob != null){
+            System.out.println("Job destroyed");
             updateWallpaperJob.cancel();
         }
+    }
+
+    public Job getJob(){
+        return updateWallpaperJob;
     }
 
 

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer-array name="updateFrequency">
-        <item name="15 minutos">15</item>
-        <item name="30 minutos">30</item>
-        <item name="Nunca (actualizar manualmente)">0</item>
-    </integer-array>
-
+    <!--TODO: Parametrize strings-->
+    <string-array name="syncFrequency">
+        <item name="60">Every hour</item>
+        <item name="1440">Every day</item>
+        <item name="10080">Every week</item>
+        <item name="0">Never (Update maually)</item>
+    </string-array>
     <string-array name="syncFrequencyValues">
-        <item name="1">1</item>
-        <item name="7">7</item>
-        <item name="30">30</item>
+        <item name="60">60</item>
+        <item name="1440">1440</item>
+        <item name="10080">10080</item>
         <item name="0">0</item>
     </string-array>
-
-    <a
 
 </resources>

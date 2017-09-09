@@ -14,6 +14,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import imdh.tfm.proceduralwallpapers.R;
@@ -67,6 +70,27 @@ public class MainPagerActivity extends AppCompatActivity {
         });
 
         firstTimeRun();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent i = new Intent(this, PreferencesActivity.class);
+        switch (item.getItemId()) {
+            case R.id.open_preferences_action:
+                startActivity(i);
+                break;
+            default:
+                startActivity(i);
+                break;
+        }
+        return true;
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
@@ -138,6 +162,8 @@ public class MainPagerActivity extends AppCompatActivity {
                 SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
                 boolean isFirstStart = getPrefs.getBoolean("firstStart", true);
                 if (isFirstStart) {
+                    //Set default values in shared preferences
+                    PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preferences, false);
 
                     //  Launch app intro
                     Intent i = new Intent(MainPagerActivity.this, IntroActivity.class);
