@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
 import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;
@@ -43,11 +44,6 @@ public class MainPagerActivity extends AppCompatActivity {
         ViewPager pager = (ViewPager) findViewById(viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         setTitle(R.string.app_title);
-
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-//        tintManager.setStatusBarTintEnabled(true);
-//        tintManager.setTintColor(Color.parseColor("#05000000"));
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -164,6 +160,7 @@ public class MainPagerActivity extends AppCompatActivity {
                 if (isFirstStart) {
                     //Set default values in shared preferences
                     PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preferences, false);
+                    ((App)getApplication()).preferencesChanged();
 
                     //  Launch app intro
                     Intent i = new Intent(MainPagerActivity.this, IntroActivity.class);

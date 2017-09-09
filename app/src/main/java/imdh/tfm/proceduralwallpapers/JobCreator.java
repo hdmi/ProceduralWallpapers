@@ -2,6 +2,7 @@ package imdh.tfm.proceduralwallpapers;
 
 
 import com.evernote.android.job.Job;
+import com.evernote.android.job.JobManager;
 
 /**
  * Created by CarlosAB on 06/09/2017.
@@ -21,11 +22,8 @@ public class JobCreator implements com.evernote.android.job.JobCreator{
     @Override
     public Job create(String tag) {
         if(tag.equals(UpdateWallpaperJob.TAG)){
-            System.out.println("Job was already created");
-            if(updateWallpaperJob == null){
-                System.out.println("Job created");
-                updateWallpaperJob = new UpdateWallpaperJob();
-            }
+            System.out.println("Job created");
+            updateWallpaperJob = new UpdateWallpaperJob();
             return updateWallpaperJob;
         }
         return null;
@@ -34,7 +32,8 @@ public class JobCreator implements com.evernote.android.job.JobCreator{
     public void destroy(){
         if(updateWallpaperJob != null){
             System.out.println("Job destroyed");
-            updateWallpaperJob.cancel();
+            JobManager.instance().cancelAll();
+            updateWallpaperJob = null;
         }
     }
 

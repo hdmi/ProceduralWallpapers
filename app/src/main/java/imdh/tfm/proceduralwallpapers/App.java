@@ -16,7 +16,6 @@ public class App extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        preferencesChanged();
     }
 
     public void preferencesChanged(){

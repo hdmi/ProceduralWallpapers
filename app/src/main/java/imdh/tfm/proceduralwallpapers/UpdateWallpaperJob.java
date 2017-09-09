@@ -52,6 +52,7 @@ class UpdateWallpaperJob extends Job {
         new JobRequest.Builder(UpdateWallpaperJob.TAG)
 //              .setExecutionWindow(1_000L, 2_000L)
                 .setPeriodic(periodicInterval, periodicInterval)
+                .setUpdateCurrent(true)
                 .build()
                 .schedule();
 

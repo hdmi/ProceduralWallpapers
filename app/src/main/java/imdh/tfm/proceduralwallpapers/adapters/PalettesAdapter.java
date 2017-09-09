@@ -1,8 +1,6 @@
 package imdh.tfm.proceduralwallpapers.adapters;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -95,13 +93,12 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
             int position = getAdapterPosition(); // gets item position
             if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
                 Palette palette = mPalettesList.get(position);
+    
+//                Intent resultIntent = new Intent();
+//                resultIntent.putExtra("PALETTE", palette);
+//                mAppCompatActivity.setResult(Activity.RESULT_OK, resultIntent);
+//                mAppCompatActivity.finish();
 
-                // We can access the data within the views
-
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("PALETTE", palette);
-                mAppCompatActivity.setResult(Activity.RESULT_OK, resultIntent);
-                mAppCompatActivity.finish();
             }
         }
     }
