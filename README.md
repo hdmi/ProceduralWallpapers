@@ -6,20 +6,13 @@
 - Control onResume, onPause, onStop
 - Circle Wallpapers
 - When exporting, generate the same image in a bigger resolution
-- App drawer (main, preferences)
-- Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Fix beginning and ending of lines in Lines Wallpapers
 - Refactor and implement MVP
-- Relevant window titles in each fragment
 - Colored toasts
 - Prioritize recent palettes in the palettes display fragment
 - Share button in the toolbar (momentary location)
-- Preferences activity
-- Update interval in preferences
 - Images for the app intro
 - New image for the gallery when it is empty
-- Block landscape mode
-- Bug, when you start the app from 0 (deleted data) and there's still images in the local phone gallery, when you go to the app gallery no images are shown.
 
 # DONE
 - Create github repository for the TFM
@@ -48,6 +41,12 @@
 - Gallery crashes when there is no saved/liked wallpapers
 - Disable save button 1 second after saving
 - Schedule a routine for updating the wallpaper automatically
+- Bug, when you start the app from 0 (deleted data) and there's still images in the local phone gallery, when you go to the app gallery no images are shown.
+- Update interval in preferences
+- Block landscape mode
+- Preferences activity
+- Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
+- Relevant window titles in each fragment
 
 
 # IMPLEMENTED WALLPAPERS

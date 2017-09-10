@@ -86,7 +86,7 @@ public class PaletteDatabase {
         return writer.toString();
     }
 
-    public List<Palette> getPalettes(){return palettes;}
+    public List<Palette> getPalettesList(){return palettes;}
 
     public Palette getRandomPalette(){return palettes.get(random.nextInt(palettes.size()));}
 

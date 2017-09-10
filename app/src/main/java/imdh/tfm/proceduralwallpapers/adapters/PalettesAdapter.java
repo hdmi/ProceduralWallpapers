@@ -21,6 +21,8 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
 
     private List<Palette> mPalettesList;
     private AppCompatActivity mAppCompatActivity;
+    private PalettesAdapterListener palettesAdapterListenerCallback;
+
 
     public PalettesAdapter(AppCompatActivity mAppCompatActivity, List<Palette> palettes) {
         this.mPalettesList = palettes;
@@ -93,7 +95,9 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
             int position = getAdapterPosition(); // gets item position
             if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
                 Palette palette = mPalettesList.get(position);
-    
+                if(palettesAdapterListenerCallback != null){
+                    palettesAdapterListenerCallback.onPaletteSelected(palette);
+                }
 //                Intent resultIntent = new Intent();
 //                resultIntent.putExtra("PALETTE", palette);
 //                mAppCompatActivity.setResult(Activity.RESULT_OK, resultIntent);
@@ -105,6 +109,18 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
 
     private Context getContext() {
         return mAppCompatActivity;
+    }
+
+    public interface PalettesAdapterListener{
+        void onPaletteSelected(Palette palette);
+    }
+
+    public PalettesAdapterListener getPalettesAdapterListenerCallback(){
+        return palettesAdapterListenerCallback;
+    }
+
+    public void setPalettesAdapterListenerCallback(PalettesAdapterListener palettesAdapterListener){
+        this.palettesAdapterListenerCallback = palettesAdapterListener;
     }
 
 }

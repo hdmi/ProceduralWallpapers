@@ -22,7 +22,7 @@ public class PalettesDisplayActivity extends AppCompatActivity {
 
         RecyclerView recyclerViewPalettes = (RecyclerView) findViewById(R.id.rvPalettess);
 
-        PalettesAdapter adapter = new PalettesAdapter(this, PaletteDatabase.getInstance(getApplicationContext()).getPalettes());
+        PalettesAdapter adapter = new PalettesAdapter(this, PaletteDatabase.getInstance(getApplicationContext()).getPalettesList());
         recyclerViewPalettes.setAdapter(adapter);
         recyclerViewPalettes.setLayoutManager(new LinearLayoutManager(this));
 

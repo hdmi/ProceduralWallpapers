@@ -24,6 +24,7 @@ import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
 import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;
 import imdh.tfm.proceduralwallpapers.fragments.ThirdFragment;
+import imdh.tfm.proceduralwallpapers.models.Palette;
 import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
@@ -33,15 +34,19 @@ import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class MainPagerActivity extends AppCompatActivity {
+public class MainPagerActivity extends AppCompatActivity implements SecondFragment.OnPaletteSelectedListener{
 
     private GenericWallpaper genericWallpaper;
+    private FirstFragment firstFragment;
+    private SecondFragment secondFragment;
+    private ThirdFragment thirdFragment;
+    private ViewPager pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pager_main);
-        ViewPager pager = (ViewPager) findViewById(viewPager);
+        pager = (ViewPager) findViewById(viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         setTitle(R.string.app_title);
 
@@ -89,6 +94,14 @@ public class MainPagerActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onPaletteSelected(Palette palette) {
+        if (firstFragment != null) {
+            firstFragment.setWallpaperWithPalette(palette);
+            pager.setCurrentItem(0);
+        }
+    }
+
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -99,10 +112,10 @@ public class MainPagerActivity extends AppCompatActivity {
         public Fragment getItem(int pos) {
             System.out.println(pos);
             switch(pos) {
-                case 0: return FirstFragment.newInstance();
-                case 1: return SecondFragment.newInstance();
-                case 2: return ThirdFragment.newInstance();
-                default: return ThirdFragment.newInstance();
+                case 0: firstFragment = FirstFragment.newInstance(); return firstFragment;
+                case 1: secondFragment = SecondFragment.newInstance(); return secondFragment;
+                case 2: thirdFragment = ThirdFragment.newInstance(); return thirdFragment;
+                default: thirdFragment = ThirdFragment.newInstance(); return thirdFragment;
             }
         }
 

@@ -138,7 +138,7 @@ public class FirstFragment extends Fragment {
         imageButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wallpaperImageView.setImageBitmap(drawCurrentWallpaper(null));
+                setWallpaperWithPalette(null);
             }
         });
 
@@ -176,5 +176,9 @@ public class FirstFragment extends Fragment {
         RandomWallpaper randomWallpaper = new RandomWallpaper(palette, getContext().getApplicationContext());
         currentWallpaper = randomWallpaper;
         return randomWallpaper.getBitmap();
+    }
+
+    public void setWallpaperWithPalette(Palette palette){
+        wallpaperImageView.setImageBitmap(drawCurrentWallpaper(palette));
     }
 }
