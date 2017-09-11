@@ -35,7 +35,8 @@ public class RandomWallpaper extends GenericWallpaper {
     }
 
     private void draw(Palette palette){
-        switch (randomBetween(0, 4)){
+        int random = randomBetween(0,6);
+        switch (random){
             case 0:
                 setBitmap(new ArcsWallpaper(getPalette()).getBitmap());
                 break;
@@ -47,6 +48,12 @@ public class RandomWallpaper extends GenericWallpaper {
                 break;
             case 3:
                 setBitmap(new SquareInceptionWallpaper(getPalette()).getBitmap());
+                break;
+            case 4:
+                setBitmap(new SquareInceptionWallpaper2(getPalette()).getBitmap());
+                break;
+            case 5:
+                setBitmap(new ArcsWallpaper2(getPalette()).getBitmap());
                 break;
             default:
                 System.out.println("Random wallpaper case out of bounds");

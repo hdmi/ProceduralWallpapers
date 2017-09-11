@@ -8,7 +8,7 @@
             android:summary="@string/pref_sync_frequency_summary"
             android:entryValues="@array/syncFrequencyValues"
             android:title="@string/pref_sync_frequency"
-            android:defaultValue="60"/>
+            android:defaultValue="0"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -54,6 +54,8 @@
 - Lines wallpaper
 - Pixelizated wallpaper
 - Square inception wallpaper
+- Arcs wallpaper 2
+- Square inception wallpaper 2
 
 # INTERESTING URLS
 https://stackoverflow.com/questions/8102741/android-how-to-use-string-resource-in-a-java-class

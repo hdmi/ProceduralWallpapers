@@ -6,6 +6,8 @@ import android.graphics.Paint;
 import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.models.Palette;
 
+import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_LINE_THICKNESS;
+
 /**
  * Created by CarlosAB on 12/08/2017.
  */
@@ -35,7 +37,7 @@ public class PixelizatedWallpaper extends GenericWallpaper {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
 
-        strokePaint.setStrokeWidth(Constants.DEFAULT_LINE_THICKNESS);
+        strokePaint.setStrokeWidth(DEFAULT_LINE_THICKNESS);
         strokePaint.setColor(Color.BLACK);
         strokePaint.setStyle(Paint.Style.STROKE);
 
