@@ -1,6 +1,8 @@
 package imdh.tfm.proceduralwallpapers.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import imdh.tfm.proceduralwallpapers.R;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
 
@@ -30,6 +33,7 @@ public class GalleryWallpapersAdapter extends BaseAdapter {
     private ArrayList<File> images;
     private final String MEDIA_STORAGE_DIR = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + R.string.app_name;
     private final String[] SUPPORTED_IMAGES = {"jpeg", "jpg", "png", "JPG", "JPEG", "PNG"};
+    private GalleryWallpapersAdapterListener galleryWallpapersAdapterListener;
 
     public GalleryWallpapersAdapter(Context c) {
         mContext = c;
@@ -61,7 +65,7 @@ public class GalleryWallpapersAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View v = convertView;
         ImageView picture;
 
@@ -69,6 +73,16 @@ public class GalleryWallpapersAdapter extends BaseAdapter {
             v = mInflater.inflate(R.layout.item_wallpaper, parent, false);
         }
         picture = (ImageView) v.findViewById(R.id.imageItemGridView);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (galleryWallpapersAdapterListener != null) {
+                    Bitmap bitmap = BitmapFactory.decodeFile(((File)getItem(position)).getAbsolutePath());
+                    galleryWallpapersAdapterListener.onWallpaperSelectedInAdapter(new GenericWallpaper(bitmap));
+                }
+            }
+        });
+
         Glide.with(mContext)
                 .load(images.get(position))
                 .thumbnail(.1f)
@@ -105,4 +119,11 @@ public class GalleryWallpapersAdapter extends BaseAdapter {
         return false;
     }
 
+    public interface GalleryWallpapersAdapterListener{
+        void onWallpaperSelectedInAdapter(GenericWallpaper genericWallpaper);
+    }
+
+    public void setGalleryWallpapersAdapterListener(GalleryWallpapersAdapterListener galleryWallpapersAdapterListener){
+        this.galleryWallpapersAdapterListener = galleryWallpapersAdapterListener;
+    }
 }

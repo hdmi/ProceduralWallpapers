@@ -4,7 +4,6 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,13 +13,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
-import imdh.tfm.proceduralwallpapers.models.Palette;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
-import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
+import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.ANIMATION_DURATION_1_SEC;
 
@@ -54,7 +53,7 @@ public class FirstFragment extends Fragment {
         wallpaperImageView = (ImageView) v.findViewById(R.id.wallpaperImageView);
 
         wallpaperImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        wallpaperImageView.setImageBitmap(drawCurrentWallpaper(null));
+        setWallpaper(drawNewWallpaper(null));
 
         buttonsVisibility = true;
         wallpaperImageView.setOnClickListener(new View.OnClickListener() {
@@ -172,13 +171,21 @@ public class FirstFragment extends Fragment {
         return f;
     }
 
-    private Bitmap drawCurrentWallpaper(Palette palette) {
+    private GenericWallpaper drawNewWallpaper(Palette palette) {
         RandomWallpaper randomWallpaper = new RandomWallpaper(palette, getContext().getApplicationContext());
         currentWallpaper = randomWallpaper;
-        return randomWallpaper.getBitmap();
+        return randomWallpaper;
     }
 
     public void setWallpaperWithPalette(Palette palette){
-        wallpaperImageView.setImageBitmap(drawCurrentWallpaper(palette));
+        setWallpaper(drawNewWallpaper(palette));
+    }
+
+    public void setThisWallpaper(GenericWallpaper genericWallpaper) {
+        setWallpaper(genericWallpaper);
+    }
+    private void setWallpaper(GenericWallpaper genericWallpaper){
+        currentWallpaper = genericWallpaper;
+        wallpaperImageView.setImageBitmap(currentWallpaper.getBitmap());
     }
 }

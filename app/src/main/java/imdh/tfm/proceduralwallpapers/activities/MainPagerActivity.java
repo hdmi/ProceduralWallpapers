@@ -34,7 +34,7 @@ import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class MainPagerActivity extends AppCompatActivity implements SecondFragment.OnPaletteSelectedListener{
+public class MainPagerActivity extends AppCompatActivity implements SecondFragment.OnPaletteSelectedListener, ThirdFragment.WallpaperSelectedListener{
 
     private GenericWallpaper genericWallpaper;
     private FirstFragment firstFragment;
@@ -97,8 +97,16 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
     @Override
     public void onPaletteSelected(Palette palette) {
         if (firstFragment != null) {
-            firstFragment.setWallpaperWithPalette(palette);
             pager.setCurrentItem(0);
+            firstFragment.setWallpaperWithPalette(palette);
+        }
+    }
+
+    @Override
+    public void onWallpaperSelected(GenericWallpaper genericWallpaper) {
+        if (firstFragment != null) {
+            pager.setCurrentItem(0);
+            firstFragment.setThisWallpaper(genericWallpaper);
         }
     }
 

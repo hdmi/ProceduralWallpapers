@@ -25,6 +25,10 @@ public class GenericWallpaper {
         canvas = new Canvas(bitmap);
         palette = new Palette();
     }
+    //T
+    public GenericWallpaper(Bitmap bitmap){
+        this.bitmap = bitmap;
+    }
 
     public void fillWithColor(int color) {
         Paint mPaint = new Paint();

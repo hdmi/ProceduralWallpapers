@@ -47,6 +47,7 @@
 - Preferences activity
 - Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Relevant window titles in each fragment
+- Gallery fixed
 
 
 # IMPLEMENTED WALLPAPERS
