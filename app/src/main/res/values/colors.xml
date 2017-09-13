@@ -3,4 +3,12 @@
     <color name="colorPrimary">#00efa7</color>
     <color name="colorPrimaryDark">#00a775</color>
     <color name="colorAccent">#ff9831</color>
+
+    <!--Bottom navigation colors-->
+    <color name="color_tab_1">#E63946</color>
+    <color name="color_tab_2">#457B9D</color>
+    <color name="color_tab_3">#A8DADC</color>
+
+
+    <color name="asdf">#ff00ff00</color>
 </resources>

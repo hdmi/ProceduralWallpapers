@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
@@ -18,6 +19,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
@@ -36,11 +40,11 @@ import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
 
 public class MainPagerActivity extends AppCompatActivity implements SecondFragment.OnPaletteSelectedListener, ThirdFragment.WallpaperSelectedListener{
 
-    private GenericWallpaper genericWallpaper;
     private FirstFragment firstFragment;
     private SecondFragment secondFragment;
     private ThirdFragment thirdFragment;
     private ViewPager pager;
+    private AHBottomNavigation bottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,13 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
         pager = (ViewPager) findViewById(viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         setTitle(R.string.app_title);
+
+
+
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//
+//        toolbar.inflateMenu(R.menu.actionbar_menu);
+
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -62,15 +73,74 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
             public void onPageSelected(int position) {
                 switch(position){
-                    case 0: setTitle(R.string.app_title); break;
-                    case 1: setTitle(R.string.palettes_showcase_title); break;
-                    case 2: setTitle(R.string.gallery_title); break;
+                    case 0: bottomNavigation.setCurrentItem(0); setTitle(R.string.app_title); break;
+                    case 1: getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00ff00)); bottomNavigation.setCurrentItem(1); setTitle(R.string.palettes_showcase_title); break;
+                    case 2: bottomNavigation.setCurrentItem(2); setTitle(R.string.gallery_title); break;
                     default: setTitle(R.string.app_title); break;
                 }
             }
         });
 
+        setupBottomNavigation();
+
         firstTimeRun();
+    }
+
+    private void setupBottomNavigation() {
+        bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
+
+        // Create items
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_check_white_small, R.color.colorPrimary);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_palette_white_small, R.color.asdf);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_heart_white_small, R.color.colorPrimary);
+
+        // Add items
+        bottomNavigation.addItem(item1);
+        bottomNavigation.addItem(item2);
+        bottomNavigation.addItem(item3);
+
+//        bottomNavigation.setBehaviorTranslationEnabled(true);
+
+        bottomNavigation.setBehaviorTranslationEnabled(false);
+
+        // Set background color
+        bottomNavigation.setDefaultBackgroundColor(0xff00ff00);
+
+        // Disable the translation inside the CoordinatorLayout
+        bottomNavigation.setBehaviorTranslationEnabled(false);
+
+        // Change colors
+        bottomNavigation.setAccentColor(0xff00ff00);
+        bottomNavigation.setInactiveColor(0xff00ff00);
+
+        // Force to tint the drawable (useful for font with icon for example)
+//        bottomNavigation.setForceTint(true);
+
+        // Manage titles
+        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+
+        // Use colored navigation with circle reveal effect
+        bottomNavigation.setColored(true);
+
+        // Set listeners
+        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
+            @Override
+            public boolean onTabSelected(int position, boolean wasSelected) {
+                switch (position){
+                    case 0:
+                        pager.setCurrentItem(0);
+                        break;
+                    case 1:
+                        pager.setCurrentItem(1);
+                        break;
+                    case 2:
+                        pager.setCurrentItem(2);
+                        break;
+                    default:break;
+                }
+                return true;
+            }
+        });
     }
 
     @Override

@@ -34,6 +34,8 @@ dependencies {
     compile 'com.github.apl-devs:appintro:v4.2.2'
     compile 'com.evernote:android-job:1.1.11'
     compile 'moe.shizuku.preference:preference-dialog-appcompat:2.0.3'
+    compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
+
 
     testCompile 'junit:junit:4.12'
 }

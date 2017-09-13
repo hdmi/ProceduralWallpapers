@@ -1,18 +1,22 @@
 # TODO
 
-- Logs library for debugging
-- Create dialog while saving
+- Setting to enable and disable types of wallpapers
+- Navigation bar in the bottom
 - Random pictures folder name
 - Control onResume, onPause, onStop
 - Circle Wallpapers
-- When exporting, generate the same image in a bigger resolution
-- Fix beginning and ending of lines in Lines Wallpapers
-- Refactor and implement MVP
-- Colored toasts
 - Prioritize recent palettes in the palettes display fragment
 - Share button in the toolbar (momentary location)
 - Images for the app intro
 - New image for the gallery when it is empty
+
+# NICE TO HAVE
+- Logs library for debugging
+- Create dialog while saving
+- When exporting, generate the same image in a bigger resolution
+- Colored toasts
+- Refactor and implement MVP
+- Fix beginning and ending of lines in Lines Wallpapers
 
 # DONE
 - Create github repository for the TFM

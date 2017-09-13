@@ -43,8 +43,6 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.first_fragment, container, false);
 
-//        TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
-//        tv.setText(getArguments().getString("msg"));
 
         imageButton0 = (ImageButton) v.findViewById(R.id.imageButton0);
         imageButton1 = (ImageButton) v.findViewById(R.id.imageButton1);

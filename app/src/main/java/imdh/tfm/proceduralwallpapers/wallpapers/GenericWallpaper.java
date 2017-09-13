@@ -25,7 +25,7 @@ public class GenericWallpaper {
         canvas = new Canvas(bitmap);
         palette = new Palette();
     }
-    //T
+    //TODO: canvas and palette not initialized
     public GenericWallpaper(Bitmap bitmap){
         this.bitmap = bitmap;
     }
