@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -62,6 +63,7 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
 
 
         View decorView = getWindow().getDecorView();
+        final Window window = getWindow();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //                | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
@@ -73,10 +75,26 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
             public void onPageSelected(int position) {
                 switch(position){
-                    case 0: bottomNavigation.setCurrentItem(0); setTitle(R.string.app_title); break;
-                    case 1: getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00ff00)); bottomNavigation.setCurrentItem(1); setTitle(R.string.palettes_showcase_title); break;
-                    case 2: bottomNavigation.setCurrentItem(2); setTitle(R.string.gallery_title); break;
-                    default: setTitle(R.string.app_title); break;
+                    case 0:
+                        window.setStatusBarColor(getResources().getColor(R.color.color_tab_1_dark));
+                        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_1)));
+                        bottomNavigation.setCurrentItem(0);
+                        setTitle(R.string.app_title);
+                        break;
+                    case 1:
+                        window.setStatusBarColor(getResources().getColor(R.color.color_tab_2_dark));
+                        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_2)));
+                        bottomNavigation.setCurrentItem(1);
+                        setTitle(R.string.palettes_showcase_title);
+                        break;
+                    case 2:
+                        window.setStatusBarColor(getResources().getColor(R.color.color_tab_3_dark));
+                        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_3)));
+                        bottomNavigation.setCurrentItem(2);
+                        setTitle(R.string.gallery_title); break;
+                    default:
+                        setTitle(R.string.app_title);
+                        break;
                 }
             }
         });
@@ -90,9 +108,9 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
 
         // Create items
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_check_white_small, R.color.colorPrimary);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_palette_white_small, R.color.asdf);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_heart_white_small, R.color.colorPrimary);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_check_white_small, R.color.color_tab_1);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_palette_white_small, R.color.color_tab_2);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_heart_white_small, R.color.color_tab_3);
 
         // Add items
         bottomNavigation.addItem(item1);

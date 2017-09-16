@@ -30,25 +30,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="60dp"
 
-        android:src="@drawable/ic_refresh_black_small"
+        android:src="@drawable/ic_refresh_white_small"
         android:background="@drawable/roundcorner"
         />
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="@dimen/sphere_icon_big"
-        android:layout_height="@dimen/sphere_icon_big"
+        android:layout_width="@dimen/sphere_icon_small"
+        android:layout_height="@dimen/sphere_icon_small"
         android:elevation="6dp"
 
         app:layout_constraintStart_toEndOf="@id/imageButton0"
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
 
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="60dp"
 
-        android:src="@drawable/ic_check_black_big"
+        android:src="@drawable/ic_check_white_big"
         android:background="@drawable/roundcorner"
         />
 
@@ -61,9 +63,9 @@
         app:layout_constraintStart_toEndOf="@id/imageButton1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="60dp"
 
-        android:src="@drawable/ic_heart_black_small"
+        android:src="@drawable/ic_heart_white_small"
         android:background="@drawable/roundcorner"
         />
 

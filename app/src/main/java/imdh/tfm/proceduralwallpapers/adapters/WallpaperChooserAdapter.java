@@ -1,20 +1,19 @@
 package imdh.tfm.proceduralwallpapers.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
-import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.WALLPAPERS_NAMES;
 
@@ -40,7 +39,7 @@ public class WallpaperChooserAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 30;
+        return 4;
     }
 
     @Override
@@ -56,17 +55,19 @@ public class WallpaperChooserAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
-        ImageView picture;
+        ImageButton picture;
 
         if (v == null) {
             v = mInflater.inflate(R.layout.item_wallpaper_chooser, parent, false);
         }
-        picture = (ImageView) v.findViewById(R.id.grid_image);
+        picture = (ImageButton) v.findViewById(R.id.grid_image);
 
-        if(UtilsWallpaper.randomBetween(0,2)%2 == 0) picture.setBackgroundColor(0xff00ff);
-        Glide.with(mContext)
-                .load(new RandomWallpaper().getBitmap())
-                .into(picture);
+//        if(UtilsWallpaper.randomBetween(0,2)%2 == 0) picture.setBackgroundColor(0xff00ff);
+        GenericWallpaper g = new GenericWallpaper(50,50);
+        g.fillWithColor(0x00ff00);
+        Drawable a = new BitmapDrawable(g.getBitmap());
+        picture.setImageDrawable(a);
+
 
         return v;
     }
