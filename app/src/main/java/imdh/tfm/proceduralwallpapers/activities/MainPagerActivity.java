@@ -157,6 +157,9 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
             case R.id.open_preferences_action:
                 startActivity(i);
                 break;
+            case R.id.open_wallpaper_chooser_action:
+                startActivity(new Intent(this, WallpaperChooserActivity.class));
+                break;
             default:
                 startActivity(i);
                 break;
