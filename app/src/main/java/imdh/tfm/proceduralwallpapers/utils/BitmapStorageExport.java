@@ -2,7 +2,6 @@ package imdh.tfm.proceduralwallpapers.utils;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 
@@ -10,8 +9,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import imdh.tfm.proceduralwallpapers.R;
-
-import static android.os.Environment.DIRECTORY_PICTURES;
 /**
  * Created by CarlosAB on 07/08/2017.
  */
@@ -19,13 +16,12 @@ import static android.os.Environment.DIRECTORY_PICTURES;
 public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
 
     //TODO: Move file_path path to preferences
-    private String file_path = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + R.string.app_name;
     private File directory;
     private Bitmap bitmap;
 
     private View content;
 
-    public BitmapStorageExport(Bitmap bitmap, View content){
+    public BitmapStorageExport(Bitmap bitmap, View content, String file_path){
         //Check directory if exists, otherwise create it
         this.bitmap = bitmap;
         this.content = content;

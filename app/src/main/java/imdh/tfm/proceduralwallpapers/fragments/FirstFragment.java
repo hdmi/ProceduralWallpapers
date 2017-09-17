@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
 import imdh.tfm.proceduralwallpapers.models.Palette;
@@ -42,7 +43,6 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.first_fragment, container, false);
-
 
         imageButton0 = (ImageButton) v.findViewById(R.id.imageButton0);
         imageButton1 = (ImageButton) v.findViewById(R.id.imageButton1);
@@ -157,7 +157,8 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 ((MainPagerActivity) getActivity()).askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(((MainPagerActivity) getActivity()).doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                    new BitmapStorageExport(currentWallpaper.getBitmap(), getActivity().findViewById(android.R.id.content)).execute();
+                    String filePath2Save = ((App) getActivity().getApplication()).getIMAGES_PATH();
+                    new BitmapStorageExport(currentWallpaper.getBitmap(), getActivity().findViewById(android.R.id.content), filePath2Save).execute();
                 }
             }
         });

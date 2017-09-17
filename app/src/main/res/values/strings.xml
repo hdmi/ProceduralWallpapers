@@ -23,20 +23,27 @@
 
     <!--Preferences-->
     <!--TODO: Change these strings as it is a example from internet-->
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="menu_settings">Opciones</string>
     <string name="pref_send_report">Send crash reports</string>
     <string name="pref_send_report_summary">Helps to fix bugs</string>
-    <string name="pref_sync_frequency">Update frequency</string>
-    <string name="pref_sync_frequency_summary">Set the wallpaper update frequency</string>
-    <string name="pref_user_name">Set username</string>
-    <string name="pref_user_name_summary">Set your username</string>
+    <string name="pref_sync_frequency">Frecuencia de actualización</string>
+    <string name="pref_sync_frequency_summary">Establece cada cuanto tiempo quieres que se actualice el fondo de pantalla</string>
+    <string name="pref_user_name">Nombre de usuario</string>
+    <string name="pref_user_name_summary">Establece tu nombre de usuario</string>
     <string name="pref_user_profile">User Profile</string>
-    <string name="pref_update_setting">Update Settings</string>
+    <string name="pref_update_setting">Opciones de actualización</string>
 
     <!--Bottom navigation-->
     <string name="tab_1">Fábrica</string>
     <string name="tab_2">Colores</string>
     <string name="tab_3">Me Gusta</string>
+
+    <!--Dialogs-->
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_yes">Sí</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_delete_message">¿Estás seguro de que deseas eliminarlo?</string>
+    <string name="dialog_delete_wallpaper_title">Eliminar wallpaper</string>
+
 </resources>

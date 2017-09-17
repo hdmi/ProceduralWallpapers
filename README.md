@@ -1,12 +1,9 @@
 # TODO
 
 - Setting to enable and disable types of wallpapers
-- Navigation bar in the bottom
-- Random pictures folder name
 - Control onResume, onPause, onStop
 - Circle Wallpapers
 - Prioritize recent palettes in the palettes display fragment
-- Share button in the toolbar (momentary location)
 - Images for the app intro
 - New image for the gallery when it is empty
 
@@ -17,6 +14,7 @@
 - Colored toasts
 - Refactor and implement MVP
 - Fix beginning and ending of lines in Lines Wallpapers
+- Share button in the toolbar (momentary location)
 
 # DONE
 - Create github repository for the TFM
@@ -52,6 +50,8 @@
 - Palette click does not generate a new wallpaper with the color (after choosing color move to wallpaper view fragment)
 - Relevant window titles in each fragment
 - Gallery fixed
+- Navigation bar in the bottom
+- Random pictures folder name
 
 
 # IMPLEMENTED WALLPAPERS

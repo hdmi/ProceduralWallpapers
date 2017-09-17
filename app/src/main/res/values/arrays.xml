@@ -2,10 +2,10 @@
 <resources>
     <!--TODO: Parametrize strings-->
     <string-array name="syncFrequency">
-        <item name="60">Every hour</item>
-        <item name="1440">Every day</item>
-        <item name="10080">Every week</item>
-        <item name="0">Never (Update maually)</item>
+        <item name="60">Cada hora</item>
+        <item name="1440">Diariamente</item>
+        <item name="10080">Semanalmente</item>
+        <item name="0">Nunca (Actualizar manualmente)</item>
     </string-array>
     <string-array name="syncFrequencyValues">
         <item name="60">60</item>

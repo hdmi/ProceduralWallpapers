@@ -17,9 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.models.Palette;
 import imdh.tfm.proceduralwallpapers.R;
+import imdh.tfm.proceduralwallpapers.models.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                    new BitmapStorageExport(genericWallpaper.getBitmap(), findViewById(android.R.id.content)).execute();
+//                    new BitmapStorageExport(genericWallpaper.getBitmap(), findViewById(android.R.id.content)).execute();
                 }
             }
         });

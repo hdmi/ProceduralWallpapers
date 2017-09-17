@@ -3,9 +3,14 @@ package imdh.tfm.proceduralwallpapers;
 
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 
 import com.evernote.android.job.JobManager;
+
+import java.io.File;
+
+import static android.os.Environment.DIRECTORY_PICTURES;
 
 /**
  * Created by CarlosAB on 06/09/2017.
@@ -13,9 +18,16 @@ import com.evernote.android.job.JobManager;
 
 public class App extends Application{
 
+    private String IMAGES_PATH;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        IMAGES_PATH = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + getString(R.string.app_name);
+    }
+
+    public String getIMAGES_PATH() {
+        return IMAGES_PATH;
     }
 
     public void preferencesChanged(){
@@ -35,5 +47,8 @@ public class App extends Application{
             UpdateWallpaperJob updateWallpaperJob = (UpdateWallpaperJob) JobCreator.getInstance().create(UpdateWallpaperJob.TAG);
             updateWallpaperJob.scheduleJob(frequency);
         }
+
+
     }
+
 }
