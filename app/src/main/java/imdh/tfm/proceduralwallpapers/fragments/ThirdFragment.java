@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.adapters.GalleryWallpapersAdapter;
@@ -29,12 +31,18 @@ public class ThirdFragment extends Fragment implements GalleryWallpapersAdapter.
         gridview.setAdapter(galleryWallpapersAdapter);
         galleryWallpapersAdapter.setGalleryWallpapersAdapterListener(this);
 
+        ImageView backgroundImageView = (ImageView) v.findViewById(R.id.galleryBackgroundImageView);
+        TextView backgroundTextView = (TextView) v.findViewById(R.id.galleryBackgroundTextView);
+        
         if(gridview.getCount() <= 0){
-            gridview.setBackground(getResources().getDrawable(R.drawable.gallery_background));
+            backgroundImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_ghost_no_likes));
+            backgroundTextView.setText(getResources().getString(R.string.no_likes_message));
         }
         else{
-            gridview.setBackgroundDrawable(null);
+            backgroundImageView.setImageDrawable(null);
+            backgroundTextView.setText("");
         }
+
         return v;
     }
 

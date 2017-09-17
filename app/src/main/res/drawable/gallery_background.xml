@@ -3,3 +3,7 @@
     android:src="@mipmap/camera_intro"
     android:tileMode="disabled" android:gravity="center" >
 </bitmap>
+<!--<nine-patch xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:src="@drawable/ic_ghost_no_likes"-->
+    <!--android:dither="false"-->
+    <!--android:gravity="center"/>-->

@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/grid_gallery"
-    android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:columnWidth="90dp"
-    android:numColumns="2"
-    android:verticalSpacing="5dp"
-    android:horizontalSpacing="5dp"
-    android:stretchMode="columnWidth"
-    android:gravity="center"
-    android:background="@drawable/gallery_background"
-    />
+    android:layout_width="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/galleryBackgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_ghost_no_likes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
+        android:id="@+id/galleryBackgroundTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_likes_message"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@id/galleryBackgroundImageView"
+        />
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grid_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        />
+</RelativeLayout>
