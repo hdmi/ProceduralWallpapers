@@ -18,14 +18,16 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
     //TODO: Move file_path path to preferences
     private File directory;
     private Bitmap bitmap;
+    private String fileName;
 
     private View content;
 
-    public BitmapStorageExport(Bitmap bitmap, View content, String file_path){
+    public BitmapStorageExport(Bitmap bitmap, View content, String filePath, String fileName){
         //Check directory if exists, otherwise create it
         this.bitmap = bitmap;
         this.content = content;
-        directory = new File(file_path);
+        this.fileName = fileName;
+        directory = new File(filePath);
         if(!directory.exists()){
             directory.mkdirs();
         }
@@ -41,12 +43,20 @@ public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Snackbar.make(content, R.string.image_saved_snackbar, Snackbar.LENGTH_LONG)
-                .show();
+        if(content != null){
+            Snackbar.make(content, R.string.image_saved_snackbar, Snackbar.LENGTH_LONG)
+                    .show();
+        }
     }
 
     private void saveBitmap(Bitmap bitmap){
-        File fileBitmap = new File(directory, "wallpaper_" + System.currentTimeMillis()+ ".png");
+        File fileBitmap;
+        if(fileName == null || fileName.equals("")){
+            fileBitmap = new File(directory, "wallpaper_" + System.currentTimeMillis()+ ".png");
+        }
+        else{
+            fileBitmap = new File(directory, fileName);
+        }
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(fileBitmap);

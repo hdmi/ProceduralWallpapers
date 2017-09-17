@@ -158,7 +158,7 @@ public class FirstFragment extends Fragment {
                 ((MainPagerActivity) getActivity()).askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(((MainPagerActivity) getActivity()).doIHavePermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                     String filePath2Save = ((App) getActivity().getApplication()).getIMAGES_PATH();
-                    new BitmapStorageExport(currentWallpaper.getBitmap(), getActivity().findViewById(android.R.id.content), filePath2Save).execute();
+                    new BitmapStorageExport(currentWallpaper.getBitmap(), getActivity().findViewById(android.R.id.content), filePath2Save, null).execute();
                 }
             }
         });

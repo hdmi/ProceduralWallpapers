@@ -17,6 +17,7 @@ public class WallpaperChooserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallpaper_chooser);
+        setTitle(R.string.wallpaper_chooser_title);
 
         WallpaperChooserAdapter adapter = new WallpaperChooserAdapter(this);
         GridView grid = (GridView) findViewById(R.id.grid);
