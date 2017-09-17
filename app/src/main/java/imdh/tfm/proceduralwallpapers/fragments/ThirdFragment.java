@@ -33,7 +33,7 @@ public class ThirdFragment extends Fragment implements GalleryWallpapersAdapter.
 
         ImageView backgroundImageView = (ImageView) v.findViewById(R.id.galleryBackgroundImageView);
         TextView backgroundTextView = (TextView) v.findViewById(R.id.galleryBackgroundTextView);
-        
+
         if(gridview.getCount() <= 0){
             backgroundImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_ghost_no_likes));
             backgroundTextView.setText(getResources().getString(R.string.no_likes_message));

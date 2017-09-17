@@ -1,8 +1,7 @@
 package imdh.tfm.proceduralwallpapers.adapters;
 
 import android.content.Context;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,9 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.ExactWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.WALLPAPERS_NAMES;
 
@@ -39,7 +39,7 @@ public class WallpaperChooserAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return enabledWallpapers.size();
     }
 
     @Override
@@ -62,36 +62,19 @@ public class WallpaperChooserAdapter extends BaseAdapter {
         }
         picture = (ImageButton) v.findViewById(R.id.grid_image);
 
-//        if(UtilsWallpaper.randomBetween(0,2)%2 == 0) picture.setBackgroundColor(0xff00ff);
-        GenericWallpaper g = new GenericWallpaper(50,50);
-        g.fillWithColor(0x00ff00);
-        Drawable a = new BitmapDrawable(g.getBitmap());
-        picture.setImageDrawable(a);
+        ExactWallpaper g = new ExactWallpaper(Constants.W_ARCS);
+//        Drawable a = new BitmapDrawable(g.getBitmap());
+//        String p = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + mContext.getString(R.string.app_name);
+//        new BitmapStorageExport(g.getBitmap(), v, p).execute();
 
+//        picture.setImageDrawable(g.getBitmap());
+        Bitmap bitmap = new ExactWallpaper(enabledWallpapers.get(position)).getBitmap();
+        Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/10, bitmap.getHeight()/10, false);
+        picture.setImageBitmap(bitmap);
 
         return v;
     }
 
-//    private ArrayList<String> getClassesOfPackage(String packageName) {
-//        ArrayList<String> classes = new ArrayList<String>();
-//        try {
-//            String packageCodePath = mContext.getApplicationContext().getPackageCodePath();
-//            System.out.println("PackageCodePath: "+ packageCodePath);
-//
-//            DexFile df = new DexFile(packageCodePath);
-//            for (Enumeration<String> iter = df.entries(); iter.hasMoreElements(); ) {
-//                String className = iter.nextElement();
-//                System.out.println("Class: "+className);
-//                if (className.contains(packageName)) {
-//                    classes.add(className.substring(className.lastIndexOf(".") + 1, className.length()));
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return classes;
-//    }
 
 }
 

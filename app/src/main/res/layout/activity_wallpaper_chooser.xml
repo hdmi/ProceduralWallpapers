@@ -6,7 +6,7 @@
     tools:context=".activities.WallpaperChooserActivity" >
 
     <GridView
-        android:numColumns="auto_fit"
+        android:numColumns="2"
         android:gravity="center"
         android:columnWidth="100dp"
         android:stretchMode="columnWidth"

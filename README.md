@@ -5,8 +5,7 @@
 - Circle Wallpapers
 - Prioritize recent palettes in the palettes display fragment
 - Images for the app intro
-- New image for the gallery when it is empty
-- Hide bottom navigation on scrolling (check coordinator layout) 
+- Hide bottom navigation on scrolling (check coordinator layout)
 
 # NICE TO HAVE
 - Logs library for debugging
@@ -53,6 +52,7 @@
 - Gallery fixed
 - Navigation bar in the bottom
 - Random pictures folder name
+- New image for the gallery when it is empty
 
 
 # IMPLEMENTED WALLPAPERS
