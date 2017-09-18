@@ -22,6 +22,7 @@ public class Constants {
 
     //Jobs
     public static final long MIN_PERIODIC_INTERVAL = 900_000L;
+    public static final long PERIODIC_INTERVAL_THRESHOLD = 600000;
 
     //Wallpapers
     public static final String W_ARCS = "ArcsWallpaper";

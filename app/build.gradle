@@ -28,6 +28,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'jp.wasabeef:glide-transformations:3.0.1'
     compile 'com.android.support:design:22.2.0'
     compile 'com.github.apl-devs:appintro:v4.2.2'
     compile 'com.evernote:android-job:1.1.11'

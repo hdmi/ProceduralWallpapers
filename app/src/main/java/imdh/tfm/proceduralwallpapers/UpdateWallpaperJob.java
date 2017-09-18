@@ -11,6 +11,8 @@ import java.util.Date;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
 
+import static imdh.tfm.proceduralwallpapers.Constants.PERIODIC_INTERVAL_THRESHOLD;
+
 /**
  * Created by CarlosAB on 06/09/2017.
  */
@@ -51,13 +53,13 @@ class UpdateWallpaperJob extends Job {
         //TODO: Make the periodic window wider
         new JobRequest.Builder(UpdateWallpaperJob.TAG)
 //              .setExecutionWindow(1_000L, 2_000L)
-                .setPeriodic(periodicInterval, periodicInterval)
+                .setPeriodic(periodicInterval, periodicInterval+PERIODIC_INTERVAL_THRESHOLD)
                 .setUpdateCurrent(true)
                 .build()
                 .schedule();
 
         System.out.println("Job scheduled for the interval: "+periodicInterval/1000/60+" minutes");
-
+//+600000
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.MINUTE, (int) periodicInterval/1000/60);
