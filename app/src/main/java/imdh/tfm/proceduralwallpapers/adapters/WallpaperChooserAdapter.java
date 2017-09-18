@@ -1,18 +1,18 @@
 package imdh.tfm.proceduralwallpapers.adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
@@ -22,12 +22,9 @@ import java.util.Arrays;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.wallpapers.ExactWallpaper;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
-import static android.R.attr.bitmap;
 import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 import static imdh.tfm.proceduralwallpapers.Constants.WALLPAPERS_NAMES;
 
@@ -46,10 +43,13 @@ public class WallpaperChooserAdapter extends BaseAdapter {
     private ArrayList<File> cachedFiles;
     private final String CACHE_STORAGE_DIR;
 
+    private SharedPreferences sharedPreferences;
+
 
     public WallpaperChooserAdapter(Context c) {
         mContext = c;
         mInflater = LayoutInflater.from(c);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         enabledWallpapers = new ArrayList<String>(Arrays.asList(WALLPAPERS_NAMES));
 
         CACHE_STORAGE_DIR = c.getCacheDir().getAbsolutePath() + File.separator + "wallpaperchooser";
@@ -94,7 +94,7 @@ public class WallpaperChooserAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View v = convertView;
         ImageButton picture;
 
@@ -103,22 +103,15 @@ public class WallpaperChooserAdapter extends BaseAdapter {
         }
         picture = (ImageButton) v.findViewById(R.id.grid_image);
 
-//        ExactWallpaper g = new ExactWallpaper(Constants.W_ARCS);
-//        Drawable a = new BitmapDrawable(g.getBitmap());
-//        String p = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + mContext.getString(R.string.app_name);
-//        new BitmapStorageExport(g.getBitmap(), v, p).execute();
-
-//        picture.setImageDrawable(g.getBitmap());
-
-
-        picture = (ImageView) v.findViewById(R.id.imageItemGridView);
-        v.setOnClickListener(new View.OnClickListener() {
+        picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (galleryWallpapersAdapterListener != null) {
-                    Bitmap bitmap = BitmapFactory.decodeFile(((File)getItem(position)).getAbsolutePath());
-                    galleryWallpapersAdapterListener.onWallpaperSelectedInAdapter(new GenericWallpaper(bitmap));
-                }
+                try{
+                    boolean currentState = sharedPreferences.getBoolean(WALLPAPERS_NAMES[position], false);
+                    sharedPreferences.edit().putBoolean(WALLPAPERS_NAMES[position], !currentState).commit();
+                }catch (IndexOutOfBoundsException ioobe){System.err.print(ioobe);}
+//                System.out.println(sharedPreferences.getAll());
+                notifyDataSetChanged();
             }
         });
 
@@ -126,9 +119,9 @@ public class WallpaperChooserAdapter extends BaseAdapter {
             picture.setImageBitmap(temporalWallpapers.get(position));
         }
         else{
-            if(UtilsWallpaper.randomBetween(0,2)%2 == 0){
+            if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){
                 Glide.with(mContext)
-                        .load(bitmap)
+                        .load(cachedFiles.get(position))
                         .thumbnail(.1f)
                         .into(picture);
             }

@@ -24,6 +24,7 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         IMAGES_PATH = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + getString(R.string.app_name);
+        checkPreferences();
     }
 
     public String getIMAGES_PATH() {
@@ -48,7 +49,17 @@ public class App extends Application{
             updateWallpaperJob.scheduleJob(frequency);
         }
 
+    }
 
+    public void checkPreferences(){
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        for(String wallpaperName: Constants.WALLPAPERS_NAMES){
+            if(!sharedPrefs.contains(wallpaperName)){
+                editor.putBoolean(wallpaperName, true);
+            }
+        }
+        editor.commit();
     }
 
 }
