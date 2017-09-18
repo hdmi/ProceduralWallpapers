@@ -1,11 +1,12 @@
 # TODO
 
-- Setting to enable and disable types of wallpapers
 - Control onResume, onPause, onStop
 - Circle Wallpapers
 - Prioritize recent palettes in the palettes display fragment
 - Images for the app intro
 - Hide bottom navigation on scrolling (check coordinator layout)
+- Edit Wallpaper chooser layout
+- Check current palettes pool
 
 # NICE TO HAVE
 - Logs library for debugging
@@ -53,7 +54,7 @@
 - Navigation bar in the bottom
 - Random pictures folder name
 - New image for the gallery when it is empty
-
+- Setting to enable and disable types of wallpapers
 
 # IMPLEMENTED WALLPAPERS
 - Arcs wallpaper
