@@ -7,6 +7,7 @@
 - Hide bottom navigation on scrolling (check coordinator layout)
 - Edit Wallpaper chooser layout
 - Check current palettes pool
+- Collapse again navbar on returning from a activity
 
 # NICE TO HAVE
 - Logs library for debugging

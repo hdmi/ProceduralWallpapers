@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res-auto" >
     <item
         android2:id="@+id/open_preferences_action"
-        android2:icon="@drawable/ic_more_vert_black_24dp"
-        android2:orderInCategory="100"
+        android2:icon="@drawable/ic_settings_white_24dp"
+        android2:orderInCategory="101"
         android:showAsAction="always"
         android2:title="" />
     <item
         android2:id="@+id/open_wallpaper_chooser_action"
-        android2:icon="@drawable/ic_more_vert_black_24dp"
-        android2:orderInCategory="101"
+        android2:icon="@drawable/ic_terrain_white_24dp"
+        android2:orderInCategory="100"
         android:showAsAction="always"
         android2:title="" />
 </menu>
