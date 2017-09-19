@@ -11,6 +11,7 @@ import com.evernote.android.job.JobManager;
 import java.io.File;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
+import static imdh.tfm.proceduralwallpapers.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
 
 /**
  * Created by CarlosAB on 06/09/2017.
@@ -25,6 +26,7 @@ public class App extends Application{
         super.onCreate();
         IMAGES_PATH = Environment.getExternalStoragePublicDirectory(DIRECTORY_PICTURES).getAbsolutePath()+ File.separator + getString(R.string.app_name);
         checkPreferences();
+
     }
 
     public String getIMAGES_PATH() {
@@ -54,10 +56,21 @@ public class App extends Application{
     public void checkPreferences(){
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPrefs.edit();
+
+        System.out.println(sharedPrefs.getAll());
+
+        if(!sharedPrefs.contains(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME)
+                || sharedPrefs.getInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, -100) <= 0){
+            editor.putInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, 0);
+            editor.apply();
+        }
         for(String wallpaperName: Constants.WALLPAPERS_NAMES){
             if(!sharedPrefs.contains(wallpaperName)){
                 editor.putBoolean(wallpaperName, true);
+                editor.putInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME,
+                        sharedPrefs.getInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, -100)+1);
             }
+            editor.apply();
         }
         editor.commit();
     }

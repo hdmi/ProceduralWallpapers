@@ -22,10 +22,12 @@ import java.util.Arrays;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.wallpapers.ExactWallpaper;
+import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+import static imdh.tfm.proceduralwallpapers.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
+import static imdh.tfm.proceduralwallpapers.Constants.ERROR_INT_PREFERENCES;
 import static imdh.tfm.proceduralwallpapers.Constants.WALLPAPERS_NAMES;
 
 /**
@@ -67,8 +69,8 @@ public class WallpaperChooserAdapter extends BaseAdapter {
             temporalWallpapers = new ArrayList<>();
             //Generate wallpapers
             for(String wallpaperName: enabledWallpapers){
-                ExactWallpaper exactWallpaper = new ExactWallpaper(wallpaperName);
-                Bitmap bitmap = exactWallpaper.getBitmap();
+                RandomWallpaper randomWallpaper = new RandomWallpaper(wallpaperName);
+                Bitmap bitmap = randomWallpaper.getBitmap();
                 bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/3, bitmap.getHeight()/3, false);
                 temporalWallpapers.add(bitmap);
                 new BitmapStorageExport(bitmap, null, CACHE_STORAGE_DIR, wallpaperName).execute();
@@ -108,7 +110,21 @@ public class WallpaperChooserAdapter extends BaseAdapter {
             public void onClick(View v) {
                 try{
                     boolean currentState = sharedPreferences.getBoolean(WALLPAPERS_NAMES[position], false);
-                    sharedPreferences.edit().putBoolean(WALLPAPERS_NAMES[position], !currentState).commit();
+                    int currentCounter = sharedPreferences.getInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, ERROR_INT_PREFERENCES);
+
+                    if(currentState && currentCounter <= 1){return;}
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean(WALLPAPERS_NAMES[position], !currentState);
+                    if(currentState){
+                        editor.putInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, currentCounter-1);
+                    }
+                    else {
+                        editor.putInt(ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME, currentCounter+1);
+                    }
+
+                    editor.commit();
+
                 }catch (IndexOutOfBoundsException ioobe){System.err.print(ioobe);}
 //                System.out.println(sharedPreferences.getAll());
                 notifyDataSetChanged();
@@ -116,7 +132,19 @@ public class WallpaperChooserAdapter extends BaseAdapter {
         });
 
         if(cachedFiles.size() < WALLPAPERS_NAMES.length){
-            picture.setImageBitmap(temporalWallpapers.get(position));
+            if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){
+                Glide.with(mContext)
+                        .load(temporalWallpapers.get(position))
+                        .thumbnail(.1f)
+                        .into(picture);
+            }
+            else{
+                Glide.with(mContext)
+                        .load(temporalWallpapers.get(position))
+                        .thumbnail(.1f)
+                        .apply(bitmapTransform(new GrayscaleTransformation()))
+                        .into(picture);
+            }
         }
         else{
             if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){

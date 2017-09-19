@@ -17,6 +17,9 @@ public class Constants {
     //PixelatedWallpaper
     public static final int DEFAULT_SQUARE_SIZE = 200;
 
+    //CircleArrayWallpaper
+    public static final int DEFAULT_W_CICLES_NUM_OF_CIRCLES = 15;
+
     //
     public static final int ANIMATION_DURATION_1_SEC = 1000;
 
@@ -31,6 +34,7 @@ public class Constants {
     public static final String W_PIXELIZATED = "PixelizatedWallpaper";
     public static final String W_SQUARE_INCEPTION = "SquareInceptionWallpaper";
     public static final String W_SQUARE_INCEPTION_2 = "SquareInceptionWallpaper2";
+    public static final String W_CIRCLES_ARRAY = "CirclesArrayWallpaper";
 
     public static final String[] WALLPAPERS_NAMES = {
             W_ARCS,
@@ -38,9 +42,12 @@ public class Constants {
             W_LINES,
             W_PIXELIZATED,
             W_SQUARE_INCEPTION,
-            W_SQUARE_INCEPTION_2
+            W_SQUARE_INCEPTION_2,
+            W_CIRCLES_ARRAY
     };
 
+    public static final String ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME = "numOfEnabledWallpapers";
+    public static final int ERROR_INT_PREFERENCES = -100;
 
 
 }

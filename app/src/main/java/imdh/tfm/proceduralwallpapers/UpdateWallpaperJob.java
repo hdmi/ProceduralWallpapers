@@ -47,7 +47,6 @@ class UpdateWallpaperJob extends Job {
             System.out.println("Interval to small, making it default");
             periodicInterval = Constants.MIN_PERIODIC_INTERVAL;
         }
-        System.out.println("interval: "+periodicInterval+" "+(periodicInterval*1.2));
         //TODO: Make the periodic window wider
         new JobRequest.Builder(UpdateWallpaperJob.TAG)
 //              .setExecutionWindow(1_000L, 2_000L)

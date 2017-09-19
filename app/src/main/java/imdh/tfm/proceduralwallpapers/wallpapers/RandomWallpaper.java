@@ -22,8 +22,9 @@ public class RandomWallpaper extends GenericWallpaper {
     private Context context;
     private List<String> availabes;
 
-    public RandomWallpaper(){
+    public RandomWallpaper(String wallpaperName){
         super();
+        draw(wallpaperName);
     }
 
     public RandomWallpaper(Palette palette, Context context){
@@ -32,7 +33,7 @@ public class RandomWallpaper extends GenericWallpaper {
         fillAvailables();
         if(palette == null){setPalette(PaletteDatabase.getInstance(context).getRandomPalette());}
         else{setPalette(palette);}
-        draw(palette);
+        draw("");
     }
 
     public RandomWallpaper(boolean fixed){
@@ -41,9 +42,15 @@ public class RandomWallpaper extends GenericWallpaper {
         setBitmap(new SquareInceptionWallpaper(getPalette()).getBitmap());
     }
 
-    private void draw(Palette palette){
-        int random = randomBetween(0,availabes.size());
-        switch (availabes.get(random)){
+    private void draw(String wallpaperName){
+        String name;
+        if(wallpaperName == null || wallpaperName.equals("")){
+            name = availabes.get(randomBetween(0,availabes.size()));
+        }
+        else{
+            name = wallpaperName;
+        }
+        switch (name){
             case Constants.W_ARCS:
                 setBitmap(new ArcsWallpaper(getPalette()).getBitmap());
                 break;
@@ -62,6 +69,8 @@ public class RandomWallpaper extends GenericWallpaper {
             case Constants.W_ARCS_2:
                 setBitmap(new ArcsWallpaper2(getPalette()).getBitmap());
                 break;
+            case Constants.W_CIRCLES_ARRAY:
+                setBitmap(new CirclesArrayWallpaper(getPalette()).getBitmap());
             default:
                 System.out.println("Random wallpaper case out of bounds");
                 break;
