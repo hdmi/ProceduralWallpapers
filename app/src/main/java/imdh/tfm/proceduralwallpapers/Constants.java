@@ -20,6 +20,10 @@ public class Constants {
     //CircleArrayWallpaper
     public static final int DEFAULT_W_CICLES_NUM_OF_CIRCLES = 15;
 
+    //ErrorWallpaper
+    public static final int DEFAULT_TEXT_SIZE = 50;
+
+
     //
     public static final int ANIMATION_DURATION_1_SEC = 1000;
 
@@ -48,6 +52,5 @@ public class Constants {
 
     public static final String ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME = "numOfEnabledWallpapers";
     public static final int ERROR_INT_PREFERENCES = -100;
-
 
 }

@@ -50,4 +50,9 @@ public class UtilsWallpaper {
         }
     }
 
+    public Object returnRandom(Object[] array){
+        if (array.length < 0) return null;
+        return array[randomBetween(0, array.length)];
+    }
+
 }

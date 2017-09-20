@@ -9,6 +9,7 @@ import java.util.List;
 
 import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.PaletteDatabase;
+import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.models.Palette;
 
 import static imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper.randomBetween;
@@ -71,7 +72,10 @@ public class RandomWallpaper extends GenericWallpaper {
                 break;
             case Constants.W_CIRCLES_ARRAY:
                 setBitmap(new CirclesArrayWallpaper(getPalette()).getBitmap());
+                break;
             default:
+                String error = context.getString(R.string.error_wallpaper);
+                setBitmap(new ErrorWallpaper(error).getBitmap());
                 System.out.println("Random wallpaper case out of bounds");
                 break;
         }
