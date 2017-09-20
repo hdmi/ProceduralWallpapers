@@ -5,6 +5,7 @@ import android.graphics.Paint;
 
 import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 /**
  * Created by CarlosAB on 12/08/2017.
@@ -44,11 +45,13 @@ public class ArcsWallpaper extends GenericWallpaper {
         final int centerX = width/2;
         final int centerY = height/2;
 
+        int[] rotations = {0,45,90,180,-45,-90};
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, centerX, centerY);
         final int distance = (int)(width * .09);
         for (int i = 10; i > 0 ; i--) {
             mPaint.setColor(palette.getColorNumber(i%5));
             canvas.drawRoundRect(centerX-(distance*i), (int)(centerY*.9)-(distance*i), centerX+(distance*i), height*2, width, width, mPaint);
-            canvas.drawRoundRect(centerX-(distance*i), (int)(centerY*.9)-(distance*i), centerX+(distance*i), height*2, width, width, strokePaint);
         }
     }
 }

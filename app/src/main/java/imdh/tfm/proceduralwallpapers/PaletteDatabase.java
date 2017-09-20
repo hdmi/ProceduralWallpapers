@@ -46,7 +46,7 @@ public class PaletteDatabase {
 
     private void populatePalettes(){
         try {
-            JSONArray jsonArray =  new JSONArray(openJSONPalettes(Constants.PALETTES_SAMPLE_200));
+            JSONArray jsonArray =  new JSONArray(openJSONPalettes(Constants.PALETTES_SAMPLE_500));
             System.out.println(jsonArray.getJSONArray(0));
             for(int i = 0; i < jsonArray.length(); i++){
                 JSONArray palette = jsonArray.getJSONArray(i);

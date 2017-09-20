@@ -5,6 +5,7 @@ import android.graphics.Paint;
 
 import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 /**
  * Created by CarlosAB on 12/08/2017.
@@ -45,7 +46,10 @@ public class SquareInceptionWallpaper extends GenericWallpaper {
         final int centerY = height/2;
 
         final int distance = 100;
-        canvas.rotate(45, centerX, centerY);
+
+        int[] rotations = {0,45};
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, centerX, centerY);
         //canvas.rotate(UtilsWallpaper.randomBetween(30,50));
         for (int i = 10; i > 0 ; i--) {
             mPaint.setColor(palette.getColorNumber(i%5));
