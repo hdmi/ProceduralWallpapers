@@ -3,8 +3,11 @@ package imdh.tfm.proceduralwallpapers.wallpapers;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.util.Random;
+
 import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_LINE_THICKNESS;
 
@@ -43,12 +46,18 @@ public class PixelizatedWallpaper extends GenericWallpaper {
 
         final int width = canvas.getWidth();
         final int height =  canvas.getHeight();
-        canvas.rotate(-45, width/2, height/2);
+
+        int[] rotations = {0,45};
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, width/2, height/2);
+        boolean stroke = new Random().nextBoolean();
         for (int x = (int)(width*-.5); x < (width*1.5); x+=squareSize) {
             for(int y = (int)(height*-.5); y < height; y+=squareSize){
                 mPaint.setColor(palette.randomColor());
                 canvas.drawRect(x, y, x+squareSize, y+squareSize, mPaint);
-                canvas.drawRect(x, y, x+squareSize, y+squareSize, strokePaint);
+                if(stroke){
+                    canvas.drawRect(x, y, x+squareSize, y+squareSize, strokePaint);
+                }
             }
         }
 

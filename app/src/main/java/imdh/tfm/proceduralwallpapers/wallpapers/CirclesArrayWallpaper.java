@@ -43,11 +43,10 @@ public class CirclesArrayWallpaper extends GenericWallpaper {
         else{
             diameter = (height*2)/DEFAULT_W_CICLES_NUM_OF_CIRCLES;
         }
-        
+
         int[] rotations = {0,45};
-        int rot = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
-        System.out.println(rot);
-        canvas.rotate(rot, width/2, height/2);
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, width/2, height/2);
         for (int x = diameter*-2; x < height+diameter; x+=diameter){
             for (int y = diameter*-2; y < height+diameter; y+=diameter){
                 mPaint.setColor(palette.randomColor());

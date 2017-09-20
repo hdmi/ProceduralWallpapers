@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
@@ -40,13 +41,11 @@ public class WallpaperChooserAdapter extends BaseAdapter {
     private final LayoutInflater mInflater;
 
     private ArrayList<String> enabledWallpapers;
-    private ArrayList<Bitmap> temporalWallpapers;
 
     private ArrayList<File> cachedFiles;
     private final String CACHE_STORAGE_DIR;
 
     private SharedPreferences sharedPreferences;
-
 
     public WallpaperChooserAdapter(Context c) {
         mContext = c;
@@ -57,26 +56,35 @@ public class WallpaperChooserAdapter extends BaseAdapter {
         CACHE_STORAGE_DIR = c.getCacheDir().getAbsolutePath() + File.separator + "wallpaperchooser";
         cachedFiles = new ArrayList<File>();
         try{
-            File dir = new File(CACHE_STORAGE_DIR);
-            File[] files = dir.listFiles();
-            for(File f: files){
-                cachedFiles.add(f);
-            }
+            fillCachedFiles();
         }catch (NullPointerException npe){System.err.println("Cache firectory empty or inexistent");}
 
 
         if(cachedFiles.size() < WALLPAPERS_NAMES.length){
-            temporalWallpapers = new ArrayList<>();
             //Generate wallpapers
             for(String wallpaperName: enabledWallpapers){
                 RandomWallpaper randomWallpaper = new RandomWallpaper(wallpaperName);
                 Bitmap bitmap = randomWallpaper.getBitmap();
                 bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/3, bitmap.getHeight()/3, false);
-                temporalWallpapers.add(bitmap);
-                new BitmapStorageExport(bitmap, null, CACHE_STORAGE_DIR, wallpaperName).execute();
+                try {
+                    new BitmapStorageExport(bitmap, null, CACHE_STORAGE_DIR, wallpaperName).execute().get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
+            fillCachedFiles();
         }
 
+    }
+
+    private void fillCachedFiles() {
+        File dir = new File(CACHE_STORAGE_DIR);
+        File[] files = dir.listFiles();
+        for(File f: files){
+            cachedFiles.add(f);
+        }
     }
 
 
@@ -131,36 +139,18 @@ public class WallpaperChooserAdapter extends BaseAdapter {
             }
         });
 
-        if(cachedFiles.size() < WALLPAPERS_NAMES.length){
-            if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){
-                Glide.with(mContext)
-                        .load(temporalWallpapers.get(position))
-                        .thumbnail(.1f)
-                        .into(picture);
-            }
-            else{
-                Glide.with(mContext)
-                        .load(temporalWallpapers.get(position))
-                        .thumbnail(.1f)
-                        .apply(bitmapTransform(new GrayscaleTransformation()))
-                        .into(picture);
-            }
+        if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){
+            Glide.with(mContext)
+                    .load(cachedFiles.get(position))
+                    .thumbnail(.1f)
+                    .into(picture);
         }
         else{
-            if(sharedPreferences.getBoolean(enabledWallpapers.get(position), false)){
-                Glide.with(mContext)
-                        .load(cachedFiles.get(position))
-                        .thumbnail(.1f)
-                        .into(picture);
-            }
-            else{
-                Glide.with(mContext)
-                        .load(cachedFiles.get(position))
-                        .thumbnail(.1f)
-                        .apply(bitmapTransform(new GrayscaleTransformation()))
-                        .into(picture);
-            }
-
+            Glide.with(mContext)
+                    .load(cachedFiles.get(position))
+                    .thumbnail(.1f)
+                    .apply(bitmapTransform(new GrayscaleTransformation()))
+                    .into(picture);
         }
 
         return v;
