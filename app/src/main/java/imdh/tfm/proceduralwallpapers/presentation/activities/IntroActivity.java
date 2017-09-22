@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.activities;
+package imdh.tfm.proceduralwallpapers.presentation.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

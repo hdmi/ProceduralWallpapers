@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.models;
+package imdh.tfm.proceduralwallpapers.dataitems;
 
 import android.graphics.Color;
 

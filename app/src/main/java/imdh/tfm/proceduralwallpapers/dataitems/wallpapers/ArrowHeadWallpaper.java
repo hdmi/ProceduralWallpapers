@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -7,7 +7,7 @@ import android.graphics.Point;
 import java.util.ArrayList;
 import java.util.List;
 
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 /**

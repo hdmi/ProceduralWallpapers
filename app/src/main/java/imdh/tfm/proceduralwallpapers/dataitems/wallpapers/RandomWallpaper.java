@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import imdh.tfm.proceduralwallpapers.Constants;
-import imdh.tfm.proceduralwallpapers.PaletteDatabase;
+import imdh.tfm.proceduralwallpapers.persistence.PaletteDatabase;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 import static imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper.randomBetween;
 

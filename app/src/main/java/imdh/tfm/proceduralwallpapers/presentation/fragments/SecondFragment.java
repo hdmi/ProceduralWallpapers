@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.fragments;
+package imdh.tfm.proceduralwallpapers.presentation.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import imdh.tfm.proceduralwallpapers.PaletteDatabase;
+import imdh.tfm.proceduralwallpapers.persistence.PaletteDatabase;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.adapters.PalettesAdapter;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 /**
  * Created by CarlosAB on 24/08/2017.

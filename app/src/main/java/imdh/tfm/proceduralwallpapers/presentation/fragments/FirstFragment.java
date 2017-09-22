@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.fragments;
+package imdh.tfm.proceduralwallpapers.presentation.fragments;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -15,12 +15,12 @@ import android.widget.Toast;
 
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.activities.MainPagerActivity;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.presentation.activities.MainPagerActivity;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
-import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.ANIMATION_DURATION_1_SEC;
 

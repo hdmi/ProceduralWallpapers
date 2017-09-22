@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".presentation.activities.SplashActivity"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait"
             >
@@ -23,16 +23,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainPagerActivity"
+        <activity android:name=".presentation.activities.MainPagerActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".activities.IntroActivity"
+        <activity android:name=".presentation.activities.IntroActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".activities.PreferencesActivity"
+        <activity android:name=".presentation.activities.PreferencesActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".activities.WallpaperChooserActivity"
+        <activity android:name=".presentation.activities.WallpaperChooserActivity"
             android:screenOrientation="portrait"
             />
     </application>

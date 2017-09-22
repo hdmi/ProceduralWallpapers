@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.fragments;
+package imdh.tfm.proceduralwallpapers.presentation.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.adapters.GalleryWallpapersAdapter;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 
 /**
  * Created by CarlosAB on 24/08/2017.

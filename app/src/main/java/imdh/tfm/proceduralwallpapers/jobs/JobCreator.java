@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.jobs;
 
 
 import com.evernote.android.job.Job;

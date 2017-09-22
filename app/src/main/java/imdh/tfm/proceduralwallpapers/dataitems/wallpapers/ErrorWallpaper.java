@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Paint;
 

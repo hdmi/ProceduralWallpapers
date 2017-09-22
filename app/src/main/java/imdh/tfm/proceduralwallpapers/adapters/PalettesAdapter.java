@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import java.util.List;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 /**
  * Created by CarlosAB on 09/08/2017.

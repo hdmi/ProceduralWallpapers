@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
 

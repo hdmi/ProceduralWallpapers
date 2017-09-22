@@ -10,6 +10,9 @@ import com.evernote.android.job.JobManager;
 
 import java.io.File;
 
+import imdh.tfm.proceduralwallpapers.jobs.JobCreator;
+import imdh.tfm.proceduralwallpapers.jobs.UpdateWallpaperJob;
+
 import static android.os.Environment.DIRECTORY_PICTURES;
 import static imdh.tfm.proceduralwallpapers.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
 

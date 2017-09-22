@@ -1,8 +1,8 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Paint;
 
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_W_CICLES_NUM_OF_CIRCLES;

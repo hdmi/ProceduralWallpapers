@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 import static com.bumptech.glide.request.RequestOptions.bitmapTransform;

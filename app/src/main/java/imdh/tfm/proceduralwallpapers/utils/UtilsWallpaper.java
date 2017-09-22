@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import java.io.IOException;
 import java.util.Random;
 
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 /**
  * Created by CarlosAB on 06/08/2017.

@@ -1,14 +1,13 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Paint;
 
-import imdh.tfm.proceduralwallpapers.models.OneColor;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 public class LinesWallpaper extends GenericWallpaper {
 
-    private OneColor backgroundColor;
+    private int backgroundColor;
     private int lineThickness;
 
     UtilsWallpaper utilsWallpaper;
@@ -21,10 +20,10 @@ public class LinesWallpaper extends GenericWallpaper {
 
         //Variables initialization
         lineThickness = 15;
-        backgroundColor = new OneColor(0xFFFFFFFF);
+        backgroundColor = 0xFFFFFFFF;
         utilsWallpaper = utilsWallpaper.getInstance();
 
-        fillWithColor(backgroundColor.getColor());
+        fillWithColor(backgroundColor);
         Paint mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(lineThickness);

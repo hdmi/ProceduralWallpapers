@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import java.util.Random;
 
 import imdh.tfm.proceduralwallpapers.Constants;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_LINE_THICKNESS;

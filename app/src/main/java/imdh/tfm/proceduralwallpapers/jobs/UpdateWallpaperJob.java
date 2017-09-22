@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.jobs;
 
 import android.support.annotation.NonNull;
 
@@ -8,14 +8,15 @@ import com.evernote.android.job.JobRequest;
 import java.util.Calendar;
 import java.util.Date;
 
+import imdh.tfm.proceduralwallpapers.Constants;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
-import imdh.tfm.proceduralwallpapers.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 
 /**
  * Created by CarlosAB on 06/09/2017.
  */
 
-class UpdateWallpaperJob extends Job {
+public class UpdateWallpaperJob extends Job {
 
     public static final String TAG = "UpdateWallpaperJob";
 

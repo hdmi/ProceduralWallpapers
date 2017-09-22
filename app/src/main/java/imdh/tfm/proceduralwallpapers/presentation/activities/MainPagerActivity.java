@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.activities;
+package imdh.tfm.proceduralwallpapers.presentation.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,11 +26,11 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.fragments.FirstFragment;
-import imdh.tfm.proceduralwallpapers.fragments.SecondFragment;
-import imdh.tfm.proceduralwallpapers.fragments.ThirdFragment;
-import imdh.tfm.proceduralwallpapers.models.Palette;
-import imdh.tfm.proceduralwallpapers.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.FirstFragment;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.SecondFragment;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.ThirdFragment;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 import static imdh.tfm.proceduralwallpapers.R.id.viewPager;

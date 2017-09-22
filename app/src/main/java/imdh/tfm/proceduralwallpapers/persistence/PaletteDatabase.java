@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.persistence;
 
 import android.content.Context;
 
@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 /**
  * Created by CarlosAB on 06/08/2017.

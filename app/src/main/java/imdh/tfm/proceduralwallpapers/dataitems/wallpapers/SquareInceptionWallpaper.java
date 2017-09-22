@@ -1,28 +1,28 @@
-package imdh.tfm.proceduralwallpapers.wallpapers;
+package imdh.tfm.proceduralwallpapers.dataitems.wallpapers;
 
 import android.graphics.Color;
 import android.graphics.Paint;
 
 import imdh.tfm.proceduralwallpapers.Constants;
-import imdh.tfm.proceduralwallpapers.models.Palette;
+import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 /**
  * Created by CarlosAB on 12/08/2017.
  */
 
-public class SquareInceptionWallpaper2 extends GenericWallpaper {
+public class SquareInceptionWallpaper extends GenericWallpaper {
 
     Palette palette;
     Paint strokePaint = new Paint();
 
-    public SquareInceptionWallpaper2(){
+    public SquareInceptionWallpaper(){
         super();
         this.palette = new Palette();
         draw();
     }
 
-    public SquareInceptionWallpaper2(Palette newPalette){
+    public SquareInceptionWallpaper(Palette newPalette){
         super();
         this.palette = newPalette != null ? newPalette : new Palette();
         draw();
@@ -42,30 +42,15 @@ public class SquareInceptionWallpaper2 extends GenericWallpaper {
         final int width = canvas.getWidth();
         final int height =  canvas.getHeight();
 
-        final int distance = 200;
-        final int centerX;
-        final int centerY;
+        final int centerX = width/2;
+        final int centerY = height/2;
 
-        if(UtilsWallpaper.randomBetween(0,2)%2 == 0) {
-            if(UtilsWallpaper.randomBetween(0,2)%2 == 0){
-                centerX = width + (int) Math.sqrt(2*distance*distance);
-            }
-            else{
-                centerX = (int) - Math.sqrt(2*distance*distance);
-            }
-            centerY = height/2;
-        }
-        else{
-            if(UtilsWallpaper.randomBetween(0,2)%2 == 0){
-                centerY = height + (int) Math.sqrt(2*distance*distance);
-            }
-            else{
-                centerY = (int) - Math.sqrt(2*distance*distance);
-            }
-            centerX = width/2;
-        }
+        final int distance = 100;
 
-        canvas.rotate(45, centerX, centerY);
+        int[] rotations = {0,45};
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, centerX, centerY);
+        //canvas.rotate(UtilsWallpaper.randomBetween(30,50));
         for (int i = 10; i > 0 ; i--) {
             mPaint.setColor(palette.getColorNumber(i%5));
             canvas.drawRect(centerX-(distance*i), centerY-(distance*i), centerX+(distance*i), centerY+(distance*i), mPaint);
