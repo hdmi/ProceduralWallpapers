@@ -46,9 +46,7 @@ public class ArrowHeadWallpaper extends GenericWallpaper {
 //            diameter = (height*2)/DEFAULT_W_CICLES_NUM_OF_CIRCLES;
 //        }
 
-//        int[] rotations = {0,45};
-//        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
-//        canvas.rotate(currentRotation, width/2, height/2);
+
 //        for (int x = diameter*-2; x < height+diameter; x+=diameter){
 //            for (int y = diameter*-2; y < height+diameter; y+=diameter){
 //                mPaint.setColor(palette.randomColor());
@@ -57,31 +55,38 @@ public class ArrowHeadWallpaper extends GenericWallpaper {
 
 //        }
 
-        int ancho = 100;
-        int alto = 120;
+        int ancho = width/12;
+        int alto = height/16;
+        int triangleHeight = ancho/2;
 
         List<Integer> availablePalette = paletteToList(getPalette());
-        ArrayList<Integer> sideColor = new ArrayList<>();
-        int quitado = 1;
-        for(int x = 0; x < width; x+=ancho){
-            for(int y = 0; y < height; y+=alto){
-                int currentColor = availablePalette.get(UtilsWallpaper.randomBetween(0, availablePalette.size()));
-                if(availablePalette.size() < 5){
-                    availablePalette.add(quitado);
+
+        int[] rotations = {0,45,-45,90,-90,180};
+        int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
+        canvas.rotate(currentRotation, width/2, height/2);
+
+
+        int quitado1 = 0;
+        for(int x = -width/2; x < width*2; x+=ancho){
+            for(int y = -width; y < height; y+=alto){
+
+                if(availablePalette.indexOf(quitado1) > -1){
+                    availablePalette.remove(availablePalette.indexOf(quitado1));
+
                 }
+
+                //Choose new available color and draw
+                int currentColor = availablePalette.get(UtilsWallpaper.randomBetween(0, availablePalette.size()));
+                System.out.println(availablePalette.size());
                 mPaint.setColor(currentColor);
-                canvas.drawPath(obtainArrowHead(new Point(x,y), ancho, alto, 50), mPaint);
-                availablePalette.remove(availablePalette.indexOf(currentColor));
-                quitado = currentColor;
+                canvas.drawPath(obtainArrowHead(new Point(x,y), ancho, alto, triangleHeight), mPaint);
 
-
-
+                if(quitado1 != 0) {
+                    availablePalette.add(quitado1);
+                }
+                quitado1 = currentColor;
 
             }
-            if(sideColor.size() >= height/alto){
-                sideColor.clear();
-            }
-            availablePalette = paletteToList(getPalette());
         }
     }
 
