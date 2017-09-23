@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ProceduralWallpapers</string>
-    <string name="app_title">Procedural ωαιιραρεrs</string>
+    <string name="app_name">FabricaDeWallpapers</string>
+    <string name="app_title">Fábrica de Wallpapers</string>
     <string name="storage_permission_explanation">Es necesario conceder el permiso de almacenamiento para poder guardar la imagen en el teléfono</string>
     <string name="storage_permission_title">Permiso de almacenamiento</string>
     <string name="image_saved_snackbar">Imagen guardada</string>
@@ -10,6 +10,8 @@
     <string name="no_likes_message">!Ups!\nParece que no hay wallpapers en tu lista de Me gusta</string>
     <string name="wallpaper_chooser_title">Patrones de los wallpapers</string>
     <string name="error_wallpaper">Ha habido un error generando wallpapers, por favor habilita más wallpapers en opciones</string>
+    <string name="about_title">About Fábrica de Wallpapers</string>
+    <string name="about_description">Espero que estés disfrutando de la aplicación, Made with ❤️</string>
 
 
 
@@ -36,6 +38,9 @@
     <string name="pref_user_name_summary">Establece tu nombre de usuario</string>
     <string name="pref_user_profile">User Profile</string>
     <string name="pref_update_setting">Opciones de actualización</string>
+    <string name="pref_init_presentation">Iniciar presentación de nuevo</string>
+    <string name="pref_init_about_libraries">Mostrar información sobre las librerias utilizadas</string>
+
 
     <!--Bottom navigation-->
     <string name="tab_1">Fábrica</string>

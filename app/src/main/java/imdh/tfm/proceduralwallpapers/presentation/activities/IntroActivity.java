@@ -21,7 +21,7 @@ public class IntroActivity extends AppIntro {
         getSupportActionBar().hide();
         showSkipButton(false);
 
-        addSlide(AppIntroFragment.newInstance(getString(R.string.Slide1_title), getString(R.string.Slide1_description), R.mipmap.escaner_de_bolsillo, getResources().getColor(R.color.colorPrimaryDark)));
+        addSlide(AppIntroFragment.newInstance(getString(R.string.Slide1_title), getString(R.string.Slide1_description), R.mipmap.ic_launcher, getResources().getColor(R.color.colorPrimaryDark)));
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide2_title), getString(R.string.Slide2_description), R.mipmap.camera_intro, getResources().getColor(R.color.colorPrimaryDark)));
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide3_title), getString(R.string.Slide3_description), R.mipmap.documentos, 0xFF6050));
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide4_title), getString(R.string.Slide4_description), R.mipmap.edit_2, getResources().getColor(R.color.colorPrimaryDark)));

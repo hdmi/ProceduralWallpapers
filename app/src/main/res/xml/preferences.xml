@@ -11,4 +11,15 @@
             android:defaultValue="0"/>
     </PreferenceCategory>
 
+    <Preference
+        android:key="presentation_trigger"
+        android:title="@string/pref_init_presentation"
+        android:selectable="true"
+        />
+    <Preference
+        android:key="about_libraries_trigger"
+        android:title="@string/pref_init_about_libraries"
+        android:selectable="true"
+        />
+
 </PreferenceScreen>
