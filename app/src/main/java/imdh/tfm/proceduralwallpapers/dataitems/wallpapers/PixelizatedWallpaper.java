@@ -5,11 +5,11 @@ import android.graphics.Paint;
 
 import java.util.Random;
 
-import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_LINE_THICKNESS;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.DEFAULT_LINE_THICKNESS;
 
 /**
  * Created by CarlosAB on 12/08/2017.

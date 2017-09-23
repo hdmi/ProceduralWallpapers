@@ -8,7 +8,7 @@ import com.evernote.android.job.JobRequest;
 import java.util.Calendar;
 import java.util.Date;
 
-import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 

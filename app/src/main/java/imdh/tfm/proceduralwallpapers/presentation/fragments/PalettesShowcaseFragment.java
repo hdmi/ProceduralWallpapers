@@ -19,7 +19,7 @@ import imdh.tfm.proceduralwallpapers.dataitems.Palette;
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class SecondFragment extends Fragment implements PalettesAdapter.PalettesAdapterListener{
+public class PalettesShowcaseFragment extends Fragment implements PalettesAdapter.PalettesAdapterListener{
 
     OnPaletteSelectedListener mCallback;
 
@@ -48,8 +48,8 @@ public class SecondFragment extends Fragment implements PalettesAdapter.Palettes
         }
     }
 
-    public static SecondFragment newInstance() {
-        SecondFragment f = new SecondFragment();
+    public static PalettesShowcaseFragment newInstance() {
+        PalettesShowcaseFragment f = new PalettesShowcaseFragment();
         return f;
     }
 

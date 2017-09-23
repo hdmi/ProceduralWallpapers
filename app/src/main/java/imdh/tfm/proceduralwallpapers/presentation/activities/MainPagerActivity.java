@@ -26,24 +26,24 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.presentation.fragments.FirstFragment;
-import imdh.tfm.proceduralwallpapers.presentation.fragments.SecondFragment;
-import imdh.tfm.proceduralwallpapers.presentation.fragments.ThirdFragment;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.WallpaperGeneratorFragment;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.PalettesShowcaseFragment;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.MyGalleryFragment;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 
-import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
 
 /**
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class MainPagerActivity extends AppCompatActivity implements SecondFragment.OnPaletteSelectedListener, ThirdFragment.WallpaperSelectedListener{
+public class MainPagerActivity extends AppCompatActivity implements PalettesShowcaseFragment.OnPaletteSelectedListener, MyGalleryFragment.WallpaperSelectedListener{
 
-    private FirstFragment firstFragment;
-    private SecondFragment secondFragment;
-    private ThirdFragment thirdFragment;
+    private WallpaperGeneratorFragment firstFragment;
+    private PalettesShowcaseFragment secondFragment;
+    private MyGalleryFragment thirdFragment;
     private ViewPager pager;
     private AHBottomNavigation bottomNavigation;
 
@@ -211,10 +211,10 @@ public class MainPagerActivity extends AppCompatActivity implements SecondFragme
         public Fragment getItem(int pos) {
             System.out.println(pos);
             switch(pos) {
-                case 0: firstFragment = FirstFragment.newInstance(); return firstFragment;
-                case 1: secondFragment = SecondFragment.newInstance(); return secondFragment;
-                case 2: thirdFragment = ThirdFragment.newInstance(); return thirdFragment;
-                default: thirdFragment = ThirdFragment.newInstance(); return thirdFragment;
+                case 0: firstFragment = WallpaperGeneratorFragment.newInstance(); return firstFragment;
+                case 1: secondFragment = PalettesShowcaseFragment.newInstance(); return secondFragment;
+                case 2: thirdFragment = MyGalleryFragment.newInstance(); return thirdFragment;
+                default: thirdFragment = MyGalleryFragment.newInstance(); return thirdFragment;
             }
         }
 

@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.persistence.PaletteDatabase;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;

@@ -22,14 +22,14 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
-import static imdh.tfm.proceduralwallpapers.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
-import static imdh.tfm.proceduralwallpapers.Constants.ERROR_INT_PREFERENCES;
-import static imdh.tfm.proceduralwallpapers.Constants.WALLPAPERS_NAMES;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.ERROR_INT_PREFERENCES;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.WALLPAPERS_NAMES;
 
 /**
  * Created by CarlosAB on 09/08/2017.

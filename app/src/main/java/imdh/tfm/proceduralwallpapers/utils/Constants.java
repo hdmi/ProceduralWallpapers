@@ -1,4 +1,6 @@
-package imdh.tfm.proceduralwallpapers;
+package imdh.tfm.proceduralwallpapers.utils;
+
+import imdh.tfm.proceduralwallpapers.R;
 
 public class Constants {
 

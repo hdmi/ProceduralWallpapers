@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import imdh.tfm.proceduralwallpapers.Constants;
+import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 

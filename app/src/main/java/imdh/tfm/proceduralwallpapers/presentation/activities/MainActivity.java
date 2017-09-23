@@ -23,7 +23,7 @@ import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 
-import static imdh.tfm.proceduralwallpapers.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity {
 

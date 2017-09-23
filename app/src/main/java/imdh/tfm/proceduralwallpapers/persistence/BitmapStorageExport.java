@@ -1,4 +1,4 @@
-package imdh.tfm.proceduralwallpapers.utils;
+package imdh.tfm.proceduralwallpapers.persistence;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;

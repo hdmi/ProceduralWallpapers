@@ -17,18 +17,18 @@ import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.presentation.activities.MainPagerActivity;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
-import imdh.tfm.proceduralwallpapers.utils.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 
-import static imdh.tfm.proceduralwallpapers.Constants.ANIMATION_DURATION_1_SEC;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.ANIMATION_DURATION_1_SEC;
 
 /**
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class FirstFragment extends Fragment {
+public class WallpaperGeneratorFragment extends Fragment {
 
     private ImageButton imageButton0;
     private ImageButton imageButton1;
@@ -165,8 +165,8 @@ public class FirstFragment extends Fragment {
         return v;
     }
 
-    public static FirstFragment newInstance() {
-        FirstFragment f = new FirstFragment();
+    public static WallpaperGeneratorFragment newInstance() {
+        WallpaperGeneratorFragment f = new WallpaperGeneratorFragment();
         return f;
     }
 

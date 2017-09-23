@@ -18,7 +18,7 @@ import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
  * Created by CarlosAB on 24/08/2017.
  */
 
-public class ThirdFragment extends Fragment implements GalleryWallpapersAdapter.GalleryWallpapersAdapterListener {
+public class MyGalleryFragment extends Fragment implements GalleryWallpapersAdapter.GalleryWallpapersAdapterListener {
 
     WallpaperSelectedListener wallpaperSelectedListener;
 
@@ -57,8 +57,8 @@ public class ThirdFragment extends Fragment implements GalleryWallpapersAdapter.
         }
     }
 
-    public static ThirdFragment newInstance() {
-        ThirdFragment f = new ThirdFragment();
+    public static MyGalleryFragment newInstance() {
+        MyGalleryFragment f = new MyGalleryFragment();
         return f;
     }
 

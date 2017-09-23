@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-import static imdh.tfm.proceduralwallpapers.Constants.DEFAULT_W_CICLES_NUM_OF_CIRCLES;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.DEFAULT_W_CICLES_NUM_OF_CIRCLES;
 
 /**
  * Created by CarlosAB on 12/08/2017.
