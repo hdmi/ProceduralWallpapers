@@ -1,8 +1,11 @@
 package imdh.tfm.proceduralwallpapers.presentation.activities;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.View;
+import android.view.Window;
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
@@ -18,6 +21,13 @@ public class IntroActivity extends AppIntro {
     @Override
     protected void onCreate(@Nullable Bundle savedInsanceState){
         super.onCreate(savedInsanceState);
+
+        View decorView = getWindow().getDecorView();
+        final Window window = getWindow();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
         getSupportActionBar().hide();
         showSkipButton(false);
 
@@ -26,6 +36,7 @@ public class IntroActivity extends AppIntro {
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide3_title), getString(R.string.Slide3_description), R.mipmap.botones_presentacion, getResources().getColor(R.color.colorPrimaryDark)));
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide4_title), getString(R.string.Slide4_description), R.mipmap.paletas_intro, getResources().getColor(R.color.colorPrimaryDark)));
         addSlide(AppIntroFragment.newInstance(getString(R.string.Slide5_title), getString(R.string.Slide5_description), R.mipmap.galeria_intro, getResources().getColor(R.color.colorPrimary)));
+        askForPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 5);
     }
 
     @Override

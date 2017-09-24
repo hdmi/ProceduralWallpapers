@@ -55,13 +55,6 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         setTitle(R.string.app_title);
 
-
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//
-//        toolbar.inflateMenu(R.menu.actionbar_menu);
-
-
         View decorView = getWindow().getDecorView();
         final Window window = getWindow();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -117,8 +110,6 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         bottomNavigation.addItem(item2);
         bottomNavigation.addItem(item3);
 
-//        bottomNavigation.setBehaviorTranslationEnabled(true);
-
         bottomNavigation.setBehaviorTranslationEnabled(false);
 
         // Set background color
@@ -130,9 +121,6 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         // Change colors
         bottomNavigation.setAccentColor(0xff00ff00);
         bottomNavigation.setInactiveColor(0xff00ff00);
-
-        // Force to tint the drawable (useful for font with icon for example)
-//        bottomNavigation.setForceTint(true);
 
         // Manage titles
         bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);

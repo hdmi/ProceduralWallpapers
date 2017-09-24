@@ -135,7 +135,6 @@ public class WallpaperChooserAdapter extends BaseAdapter {
                     editor.commit();
 
                 }catch (IndexOutOfBoundsException ioobe){System.err.print(ioobe);}
-//                System.out.println(sharedPreferences.getAll());
                 notifyDataSetChanged();
             }
         });

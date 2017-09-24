@@ -74,10 +74,8 @@ public class ArrowHeadWallpaper extends GenericWallpaper {
                     availablePalette.remove(availablePalette.indexOf(quitado1));
 
                 }
-
                 //Choose new available color and draw
                 int currentColor = availablePalette.get(UtilsWallpaper.randomBetween(0, availablePalette.size()));
-                System.out.println(availablePalette.size());
                 mPaint.setColor(currentColor);
                 canvas.drawPath(obtainArrowHead(new Point(x,y), ancho, alto, triangleHeight), mPaint);
 

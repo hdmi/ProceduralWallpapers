@@ -32,11 +32,6 @@ public class UpdateWallpaperJob extends Job {
 
         System.out.println("Starting job scheduling");
 
-//        if(this != null || periodicInterval == this.getParams().getIntervalMs()){
-//            System.out.println("periodic interval same as already scheduled");
-//            return;
-//        }
-
         //If the periodicInterval is less than zero or zero we return without scheduling the Job
         if (periodicInterval <= 0) {
             System.out.println("Scheduling job we got zero or less interval");
@@ -50,14 +45,13 @@ public class UpdateWallpaperJob extends Job {
         }
         //TODO: Make the periodic window wider
         new JobRequest.Builder(UpdateWallpaperJob.TAG)
-//              .setExecutionWindow(1_000L, 2_000L)
                 .setPeriodic(periodicInterval)
                 .setUpdateCurrent(true)
+                .setPersisted(true)
                 .build()
                 .schedule();
 
         System.out.println("Job scheduled for the interval: "+periodicInterval/1000/60+" minutes");
-//+600000
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.MINUTE, (int) periodicInterval/1000/60);

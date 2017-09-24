@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.evernote.android.state.State;
 import com.evernote.android.state.StateSaver;
 
 import imdh.tfm.proceduralwallpapers.App;
@@ -42,10 +41,8 @@ public class WallpaperGeneratorFragment extends Fragment {
 
     private boolean buttonsVisibility;
 
-
     private GenericWallpaper currentWallpaper;
 
-    @State
     public Bitmap currentBitmap;
 
     @Override
