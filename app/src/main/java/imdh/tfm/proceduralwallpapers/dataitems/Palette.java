@@ -6,10 +6,6 @@ import java.io.Serializable;
 
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-/**
- * Created by CarlosAB on 06/08/2017.
- */
-
 public class Palette implements Serializable{
 
     private int c0;

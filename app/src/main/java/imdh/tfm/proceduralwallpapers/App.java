@@ -17,9 +17,6 @@ import imdh.tfm.proceduralwallpapers.utils.Constants;
 import static android.os.Environment.DIRECTORY_PICTURES;
 import static imdh.tfm.proceduralwallpapers.utils.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
 
-/**
- * Created by CarlosAB on 06/09/2017.
- */
 
 public class App extends Application{
 

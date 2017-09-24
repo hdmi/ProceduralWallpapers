@@ -20,9 +20,6 @@ import java.util.Random;
 import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
-/**
- * Created by CarlosAB on 06/08/2017.
- */
 
 public class PaletteDatabase {
 

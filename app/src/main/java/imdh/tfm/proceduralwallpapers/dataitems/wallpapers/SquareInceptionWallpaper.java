@@ -7,9 +7,6 @@ import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-/**
- * Created by CarlosAB on 12/08/2017.
- */
 
 public class SquareInceptionWallpaper extends GenericWallpaper {
 
@@ -50,7 +47,6 @@ public class SquareInceptionWallpaper extends GenericWallpaper {
         int[] rotations = {0,45};
         int currentRotation = rotations[UtilsWallpaper.randomBetween(0,rotations.length)];
         canvas.rotate(currentRotation, centerX, centerY);
-        //canvas.rotate(UtilsWallpaper.randomBetween(30,50));
         for (int i = 10; i > 0 ; i--) {
             mPaint.setColor(palette.getColorNumber(i%5));
             canvas.drawRect(centerX-(distance*i), centerY-(distance*i), centerX+(distance*i), centerY+(distance*i), mPaint);

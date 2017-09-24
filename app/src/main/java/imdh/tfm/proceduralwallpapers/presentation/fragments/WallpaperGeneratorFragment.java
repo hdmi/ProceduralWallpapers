@@ -27,9 +27,6 @@ import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.utils.Constants.ANIMATION_DURATION_1_SEC;
 
-/**
- * Created by CarlosAB on 24/08/2017.
- */
 
 public class WallpaperGeneratorFragment extends Fragment {
 

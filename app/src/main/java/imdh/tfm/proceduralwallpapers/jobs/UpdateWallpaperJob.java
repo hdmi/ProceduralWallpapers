@@ -12,9 +12,6 @@ import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
 
-/**
- * Created by CarlosAB on 06/09/2017.
- */
 
 public class UpdateWallpaperJob extends Job {
 
@@ -55,11 +52,8 @@ public class UpdateWallpaperJob extends Job {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.MINUTE, (int) periodicInterval/1000/60);
-
         System.out.println("Next run on: "+ cal.getTime() +" minutes");
-
         System.out.println("Ending job scheduling");
-
 
     }
 }

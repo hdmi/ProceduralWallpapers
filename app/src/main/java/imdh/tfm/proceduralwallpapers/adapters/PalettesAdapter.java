@@ -98,10 +98,6 @@ public class PalettesAdapter extends RecyclerView.Adapter<PalettesAdapter.ViewHo
                 if(palettesAdapterListenerCallback != null){
                     palettesAdapterListenerCallback.onPaletteSelected(palette);
                 }
-//                Intent resultIntent = new Intent();
-//                resultIntent.putExtra("PALETTE", palette);
-//                mAppCompatActivity.setResult(Activity.RESULT_OK, resultIntent);
-//                mAppCompatActivity.finish();
 
             }
         }

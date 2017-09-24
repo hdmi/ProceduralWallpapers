@@ -4,9 +4,6 @@ package imdh.tfm.proceduralwallpapers.jobs;
 import com.evernote.android.job.Job;
 import com.evernote.android.job.JobManager;
 
-/**
- * Created by CarlosAB on 06/09/2017.
- */
 
 public class JobCreator implements com.evernote.android.job.JobCreator{
 

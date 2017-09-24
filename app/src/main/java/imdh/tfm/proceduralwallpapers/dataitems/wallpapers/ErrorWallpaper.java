@@ -4,9 +4,6 @@ import android.graphics.Paint;
 
 import static imdh.tfm.proceduralwallpapers.utils.Constants.DEFAULT_TEXT_SIZE;
 
-/**
- * Created by CarlosAB on 12/08/2017.
- */
 
 public class ErrorWallpaper extends GenericWallpaper {
 

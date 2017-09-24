@@ -11,9 +11,6 @@ import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.utils.Constants.DEFAULT_LINE_THICKNESS;
 
-/**
- * Created by CarlosAB on 12/08/2017.
- */
 
 public class PixelizatedWallpaper extends GenericWallpaper {
 

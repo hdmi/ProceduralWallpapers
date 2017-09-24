@@ -25,8 +25,6 @@ public class Constants {
     //ErrorWallpaper
     public static final int DEFAULT_TEXT_SIZE = 50;
 
-
-    //
     public static final int ANIMATION_DURATION_1_SEC = 1000;
 
     //Jobs

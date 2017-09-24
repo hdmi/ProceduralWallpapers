@@ -9,13 +9,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import imdh.tfm.proceduralwallpapers.R;
-/**
- * Created by CarlosAB on 07/08/2017.
- */
 
 public class BitmapStorageExport extends AsyncTask<Void, Integer, String>{
 
-    //TODO: Move file_path path to preferences
     private File directory;
     private Bitmap bitmap;
     private String fileName;

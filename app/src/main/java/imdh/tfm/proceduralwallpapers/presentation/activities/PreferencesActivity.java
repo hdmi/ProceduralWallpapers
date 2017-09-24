@@ -13,9 +13,6 @@ import com.mikepenz.aboutlibraries.LibsBuilder;
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
 
-/**
- * Created by CarlosAB on 08/09/2017.
- */
 
 public class PreferencesActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
 

@@ -14,10 +14,6 @@ import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.adapters.GalleryWallpapersAdapter;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 
-/**
- * Created by CarlosAB on 24/08/2017.
- */
-
 public class MyGalleryFragment extends Fragment implements GalleryWallpapersAdapter.GalleryWallpapersAdapterListener {
 
     WallpaperSelectedListener wallpaperSelectedListener;

@@ -14,9 +14,6 @@ import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 
 import static imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper.randomBetween;
 
-/**
- * Created by CarlosAB on 21/08/2017.
- */
 
 public class RandomWallpaper extends GenericWallpaper {
 

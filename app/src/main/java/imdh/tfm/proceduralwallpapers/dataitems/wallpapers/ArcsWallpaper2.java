@@ -56,7 +56,6 @@ public class ArcsWallpaper2 extends GenericWallpaper {
         for (int i = 10; i > 0 ; i--) {
             mPaint.setColor(palette.getColorNumber(i%5));
             canvas.drawRoundRect(centerX-(distance*i), (int)(centerY*.9)-(distance*i), centerX+(distance*i), height*2, height, height, mPaint);
-            //canvas.drawRoundRect(centerX-(distance*i), (int)(centerY*.9)-(distance*i), centerX+(distance*i), height*2, width, width, strokePaint);
         }
     }
 }

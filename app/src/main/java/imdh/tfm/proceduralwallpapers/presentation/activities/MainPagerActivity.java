@@ -35,9 +35,6 @@ import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 import static imdh.tfm.proceduralwallpapers.utils.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
 
-/**
- * Created by CarlosAB on 24/08/2017.
- */
 
 public class MainPagerActivity extends AppCompatActivity implements PalettesShowcaseFragment.OnPaletteSelectedListener, MyGalleryFragment.WallpaperSelectedListener{
 
@@ -58,7 +55,6 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         View decorView = getWindow().getDecorView();
         final Window window = getWindow();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//                | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
 

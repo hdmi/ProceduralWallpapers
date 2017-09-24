@@ -7,9 +7,6 @@ import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-/**
- * Created by CarlosAB on 12/08/2017.
- */
 
 public class SquareInceptionWallpaper2 extends GenericWallpaper {
 

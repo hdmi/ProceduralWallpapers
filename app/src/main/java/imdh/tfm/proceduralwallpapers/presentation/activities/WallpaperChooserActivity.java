@@ -7,9 +7,6 @@ import android.widget.GridView;
 import imdh.tfm.proceduralwallpapers.R;
 import imdh.tfm.proceduralwallpapers.adapters.WallpaperChooserAdapter;
 
-/**
- * Created by CarlosAB on 16/09/2017.
- */
 
 public class WallpaperChooserActivity extends AppCompatActivity {
 

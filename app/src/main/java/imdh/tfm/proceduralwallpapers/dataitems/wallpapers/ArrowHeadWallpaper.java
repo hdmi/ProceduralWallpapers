@@ -10,9 +10,6 @@ import java.util.List;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
-/**
- * Created by CarlosAB on 12/08/2017.
- */
 
 public class ArrowHeadWallpaper extends GenericWallpaper {
 
@@ -36,24 +33,6 @@ public class ArrowHeadWallpaper extends GenericWallpaper {
 
         final int width = canvas.getWidth();
         final int height =  canvas.getHeight();
-
-//        final int diameter;
-//
-//        if(UtilsWallpaper.randomBetween(0,2)%2 == 0){
-//            diameter = (width*2)/DEFAULT_W_CICLES_NUM_OF_CIRCLES;
-//        }
-//        else{
-//            diameter = (height*2)/DEFAULT_W_CICLES_NUM_OF_CIRCLES;
-//        }
-
-
-//        for (int x = diameter*-2; x < height+diameter; x+=diameter){
-//            for (int y = diameter*-2; y < height+diameter; y+=diameter){
-//                mPaint.setColor(palette.randomColor());
-//                canvas.drawCircle(x, y, diameter/2, mPaint);
-//            }
-
-//        }
 
         int ancho = width/12;
         int alto = height/16;
