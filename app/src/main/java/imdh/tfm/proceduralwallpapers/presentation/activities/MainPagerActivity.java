@@ -211,9 +211,27 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         public Fragment getItem(int pos) {
             System.out.println(pos);
             switch(pos) {
-                case 0: firstFragment = WallpaperGeneratorFragment.newInstance(); return firstFragment;
-                case 1: secondFragment = PalettesShowcaseFragment.newInstance(); return secondFragment;
-                case 2: thirdFragment = MyGalleryFragment.newInstance(); return thirdFragment;
+                case 0:
+                    if (firstFragment != null) {
+                        return firstFragment;
+                    }
+                    else{
+                        firstFragment = WallpaperGeneratorFragment.newInstance(); return firstFragment;
+                    }
+                case 1:
+                    if (secondFragment != null) {
+                        return secondFragment;
+                    }
+                    else{
+                        secondFragment = PalettesShowcaseFragment.newInstance(); return secondFragment;
+                    }
+                case 2:
+                    if (thirdFragment != null) {
+                        return thirdFragment;
+                    }
+                    else{
+                        thirdFragment = MyGalleryFragment.newInstance(); return thirdFragment;
+                    }
                 default: thirdFragment = MyGalleryFragment.newInstance(); return thirdFragment;
             }
         }

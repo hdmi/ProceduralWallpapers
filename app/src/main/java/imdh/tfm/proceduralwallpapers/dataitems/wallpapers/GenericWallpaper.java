@@ -4,11 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import imdh.tfm.proceduralwallpapers.utils.Constants;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
+import imdh.tfm.proceduralwallpapers.utils.Constants;
 
 
-public class GenericWallpaper {
+public class GenericWallpaper{
 
     protected Canvas canvas;
     private Bitmap bitmap;

@@ -11,7 +11,7 @@
     <string name="wallpaper_chooser_title">Patrones de los wallpapers</string>
     <string name="error_wallpaper">Ha habido un error generando wallpapers, por favor habilita más wallpapers en opciones</string>
     <string name="about_title">About Fábrica de Wallpapers</string>
-    <string name="about_description">Espero que estés disfrutando de la aplicación, Made with ❤️</string>
+    <string name="about_description">Made with ❤️</string>
 
 
 
@@ -39,7 +39,8 @@
     <string name="pref_user_profile">User Profile</string>
     <string name="pref_update_setting">Opciones de actualización</string>
     <string name="pref_init_presentation">Iniciar presentación de nuevo</string>
-    <string name="pref_init_about_libraries">Mostrar información sobre las librerias utilizadas</string>
+    <string name="pref_init_about_libraries">Información sobre las librerias</string>
+    <string name="pref_other_info_category">Información adicional</string>
 
 
     <!--Bottom navigation-->

@@ -57,4 +57,6 @@ public class Constants {
     public static final String ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME = "numOfEnabledWallpapers";
     public static final int ERROR_INT_PREFERENCES = -100;
 
+    public static final int DOWNSCALE_RATIO = 4;
+
 }

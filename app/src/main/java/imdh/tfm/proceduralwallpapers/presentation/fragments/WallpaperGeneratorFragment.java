@@ -4,6 +4,7 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,14 +14,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.evernote.android.state.State;
+import com.evernote.android.state.StateSaver;
+
 import imdh.tfm.proceduralwallpapers.App;
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.presentation.activities.MainPagerActivity;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
-import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
-import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
+import imdh.tfm.proceduralwallpapers.presentation.activities.MainPagerActivity;
+import imdh.tfm.proceduralwallpapers.utils.UtilsWallpaper;
 
 import static imdh.tfm.proceduralwallpapers.utils.Constants.ANIMATION_DURATION_1_SEC;
 
@@ -38,11 +42,17 @@ public class WallpaperGeneratorFragment extends Fragment {
 
     private boolean buttonsVisibility;
 
+
     private GenericWallpaper currentWallpaper;
+
+    @State
+    public Bitmap currentBitmap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.first_fragment, container, false);
+        StateSaver.restoreInstanceState(this, savedInstanceState);
+
 
         imageButton0 = (ImageButton) v.findViewById(R.id.imageButton0);
         imageButton1 = (ImageButton) v.findViewById(R.id.imageButton1);
@@ -51,7 +61,13 @@ public class WallpaperGeneratorFragment extends Fragment {
         wallpaperImageView = (ImageView) v.findViewById(R.id.wallpaperImageView);
 
         wallpaperImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        setWallpaper(drawNewWallpaper(null));
+
+        if(currentBitmap != null){
+            setBitmap(currentBitmap);
+        }
+        else{
+            setWallpaper(drawNewWallpaper(null));
+        }
 
         buttonsVisibility = true;
         wallpaperImageView.setOnClickListener(new View.OnClickListener() {
@@ -185,6 +201,18 @@ public class WallpaperGeneratorFragment extends Fragment {
     }
     private void setWallpaper(GenericWallpaper genericWallpaper){
         currentWallpaper = genericWallpaper;
-        wallpaperImageView.setImageBitmap(currentWallpaper.getBitmap());
+        this.currentBitmap = genericWallpaper.getBitmap();
+        wallpaperImageView.setImageBitmap(currentBitmap);
+    }
+
+    private void setBitmap(Bitmap bitmap){
+        currentWallpaper = new GenericWallpaper(bitmap);
+        wallpaperImageView.setImageBitmap(bitmap);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        StateSaver.saveInstanceState(this, outState);
     }
 }

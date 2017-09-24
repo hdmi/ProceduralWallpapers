@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
@@ -22,11 +22,12 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import imdh.tfm.proceduralwallpapers.R;
-import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.RandomWallpaper;
+import imdh.tfm.proceduralwallpapers.persistence.BitmapStorageExport;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
 
 import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+import static imdh.tfm.proceduralwallpapers.utils.Constants.DOWNSCALE_RATIO;
 import static imdh.tfm.proceduralwallpapers.utils.Constants.ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME;
 import static imdh.tfm.proceduralwallpapers.utils.Constants.ERROR_INT_PREFERENCES;
 import static imdh.tfm.proceduralwallpapers.utils.Constants.WALLPAPERS_NAMES;
@@ -65,7 +66,7 @@ public class WallpaperChooserAdapter extends BaseAdapter {
             for(String wallpaperName: enabledWallpapers){
                 RandomWallpaper randomWallpaper = new RandomWallpaper(wallpaperName);
                 Bitmap bitmap = randomWallpaper.getBitmap();
-                bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/3, bitmap.getHeight()/3, false);
+                bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth()/DOWNSCALE_RATIO, bitmap.getHeight()/DOWNSCALE_RATIO, false);
                 try {
                     new BitmapStorageExport(bitmap, null, CACHE_STORAGE_DIR, wallpaperName).execute().get();
                 } catch (InterruptedException e) {
@@ -106,12 +107,12 @@ public class WallpaperChooserAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View v = convertView;
-        ImageButton picture;
+        ImageView picture;
 
         if (v == null) {
             v = mInflater.inflate(R.layout.item_wallpaper_chooser, parent, false);
         }
-        picture = (ImageButton) v.findViewById(R.id.grid_image);
+        picture = (ImageView) v.findViewById(R.id.grid_image);
 
         picture.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,9 +6,11 @@
     tools:context=".presentation.activities.WallpaperChooserActivity" >
 
     <GridView
-        android:numColumns="3"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
         android:gravity="center"
-        android:columnWidth="100dp"
+        android:columnWidth="90dp"
         android:stretchMode="columnWidth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

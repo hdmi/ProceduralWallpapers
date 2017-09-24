@@ -11,6 +11,8 @@
             android:defaultValue="0"/>
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/pref_other_info_category" >
+
     <Preference
         android:key="presentation_trigger"
         android:title="@string/pref_init_presentation"
@@ -21,5 +23,6 @@
         android:title="@string/pref_init_about_libraries"
         android:selectable="true"
         />
+    </PreferenceCategory>
 
 </PreferenceScreen>
