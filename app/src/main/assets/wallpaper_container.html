@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="background-color: black;">
+<h1>asdf</h1>
+  <canvas id="canvas"/>
+  <script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    canvas.width="1080"
+    canvas.height="1920"
+
+    var ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.rect(0, 0, 1080, 960);
+    ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.rect(0, 960, 1080, 1920);
+    ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    ctx.fill();
+
+
+    window.localStorage.setItem("wallpaper", canvas.toDataURL());
+    //window.javascriptAccessor.getYerData("DONE");
+  </script>
+  <!--<script src="js/scripts.js"></script>-->
+</body>
+</html>

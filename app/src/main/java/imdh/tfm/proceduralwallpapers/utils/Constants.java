@@ -40,6 +40,7 @@ public class Constants {
     public static final String W_SQUARE_INCEPTION_2 = "SquareInceptionWallpaper2";
     public static final String W_CIRCLES_ARRAY = "CirclesArrayWallpaper";
     public static final String W_ARROW_HEAD = "ArrowHeadWallpaper";
+    public static final String W_FIVE_FLAG = "FiveLinesFlagWallpaper";
 
     public static final String[] WALLPAPERS_NAMES = {
             W_ARCS,
@@ -49,7 +50,8 @@ public class Constants {
             W_SQUARE_INCEPTION,
             W_SQUARE_INCEPTION_2,
             W_CIRCLES_ARRAY,
-            W_ARROW_HEAD
+            W_ARROW_HEAD,
+            W_FIVE_FLAG
     };
 
     public static final String ENABLED_WALLPAPERS_PREFERENCE_COUNTER_NAME = "numOfEnabledWallpapers";

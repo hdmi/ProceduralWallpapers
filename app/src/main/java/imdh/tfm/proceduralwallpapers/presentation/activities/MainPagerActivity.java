@@ -31,6 +31,7 @@ import imdh.tfm.proceduralwallpapers.presentation.fragments.PalettesShowcaseFrag
 import imdh.tfm.proceduralwallpapers.presentation.fragments.MyGalleryFragment;
 import imdh.tfm.proceduralwallpapers.dataitems.Palette;
 import imdh.tfm.proceduralwallpapers.dataitems.wallpapers.GenericWallpaper;
+import imdh.tfm.proceduralwallpapers.presentation.fragments.WallpaperGeneratorJSFragment;
 
 import static imdh.tfm.proceduralwallpapers.utils.Constants.PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE;
 import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
@@ -38,6 +39,7 @@ import static imdh.tfm.proceduralwallpapers.R.id.viewPager;
 
 public class MainPagerActivity extends AppCompatActivity implements PalettesShowcaseFragment.OnPaletteSelectedListener, MyGalleryFragment.WallpaperSelectedListener{
 
+    private WallpaperGeneratorJSFragment wallpaperGeneratorJSFragment;
     private WallpaperGeneratorFragment firstFragment;
     private PalettesShowcaseFragment secondFragment;
     private MyGalleryFragment thirdFragment;
@@ -65,21 +67,26 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
             public void onPageSelected(int position) {
                 switch(position){
                     case 0:
-                        window.setStatusBarColor(getResources().getColor(R.color.color_tab_1_dark));
+                        window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
                         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_1)));
                         bottomNavigation.setCurrentItem(0);
+                        setTitle("webview");
+                    case 1:
+                        window.setStatusBarColor(getResources().getColor(R.color.color_tab_1_dark));
+                        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_1)));
+                        bottomNavigation.setCurrentItem(1);
                         setTitle(R.string.app_title);
                         break;
-                    case 1:
+                    case 2:
                         window.setStatusBarColor(getResources().getColor(R.color.color_tab_2_dark));
                         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_2)));
-                        bottomNavigation.setCurrentItem(1);
+                        bottomNavigation.setCurrentItem(2);
                         setTitle(R.string.palettes_showcase_title);
                         break;
-                    case 2:
+                    case 3:
                         window.setStatusBarColor(getResources().getColor(R.color.color_tab_3_dark));
                         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_tab_3)));
-                        bottomNavigation.setCurrentItem(2);
+                        bottomNavigation.setCurrentItem(3);
                         setTitle(R.string.gallery_title); break;
                     default:
                         setTitle(R.string.app_title);
@@ -97,14 +104,12 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
         bottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
 
         // Create items
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_check_white_small, R.color.color_tab_1);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.ic_palette_white_small, R.color.color_tab_2);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_heart_white_small, R.color.color_tab_3);
+        AHBottomNavigationItem item0 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.ic_check_white_small, R.color.color_tab_1);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.ic_heart_white_small, R.color.color_tab_3);
 
         // Add items
+        bottomNavigation.addItem(item0);
         bottomNavigation.addItem(item1);
-        bottomNavigation.addItem(item2);
-        bottomNavigation.addItem(item3);
 
         bottomNavigation.setBehaviorTranslationEnabled(false);
 
@@ -134,9 +139,6 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
                         break;
                     case 1:
                         pager.setCurrentItem(1);
-                        break;
-                    case 2:
-                        pager.setCurrentItem(2);
                         break;
                     default:break;
                 }
@@ -196,20 +198,14 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
             System.out.println(pos);
             switch(pos) {
                 case 0:
-                    if (firstFragment != null) {
-                        return firstFragment;
+                    if (wallpaperGeneratorJSFragment != null) {
+                        return wallpaperGeneratorJSFragment;
                     }
-                    else{
-                        firstFragment = WallpaperGeneratorFragment.newInstance(); return firstFragment;
+                    else {
+                        wallpaperGeneratorJSFragment = WallpaperGeneratorJSFragment.newInstance();
+                        return wallpaperGeneratorJSFragment;
                     }
                 case 1:
-                    if (secondFragment != null) {
-                        return secondFragment;
-                    }
-                    else{
-                        secondFragment = PalettesShowcaseFragment.newInstance(); return secondFragment;
-                    }
-                case 2:
                     if (thirdFragment != null) {
                         return thirdFragment;
                     }
@@ -222,7 +218,7 @@ public class MainPagerActivity extends AppCompatActivity implements PalettesShow
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
     }
 

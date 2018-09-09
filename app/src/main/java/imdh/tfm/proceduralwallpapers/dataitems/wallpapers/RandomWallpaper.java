@@ -73,6 +73,9 @@ public class RandomWallpaper extends GenericWallpaper {
             case Constants.W_ARROW_HEAD:
                 setBitmap(new ArrowHeadWallpaper(getPalette()).getBitmap());
                 break;
+            case Constants.W_FIVE_FLAG:
+                setBitmap(new FiveLinesFlagWallpaper(getPalette()).getBitmap());
+                break;
             default:
                 String error = context.getString(R.string.error_wallpaper);
                 setBitmap(new ErrorWallpaper(error).getBitmap());
