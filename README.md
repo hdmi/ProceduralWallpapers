@@ -4,7 +4,7 @@ El objetivo del proyecto es desarrollar una aplicación de código abierto que p
 
 **Vídeo demostrativo:** https://youtu.be/MuOmOcUixPw
 
-**APK Release 1.0:** https://github.com/hdmi/ProceduralWallpapers/blob/master/app/Fabrica%20de%20Wallpapers%20-%20signed.apk
+**<del>APK Release 1.0:** https://github.com/hdmi/ProceduralWallpapers/blob/master/app/Fabrica%20de%20Wallpapers%20-%20signed.apk</del>
 
 **APK Debug 1.0 :** https://github.com/hdmi/ProceduralWallpapers/blob/master/app/Fabrica%20de%20Wallpapers%20-%20debug.apk
 
